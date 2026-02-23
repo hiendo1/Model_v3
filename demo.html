@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Predictor v3</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --surface-color: #1e293b;
+            --primary-color: #3b82f6;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--surface-color);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .match-selector {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            background: rgba(15, 23, 42, 0.5);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .team-select {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+            cursor: pointer;
+        }
+
+        select:focus {
+            border-color: var(--primary-color);
+        }
+
+        .vs-badge {
+            background-color: var(--bg-color);
+            color: var(--text-muted);
+            padding: 0.5rem;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 1.5rem;
+            /* Aligns with selects */
+        }
+
+        button.predict-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+        }
+
+        button.predict-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 8px -1px rgba(59, 130, 246, 0.4);
+        }
+
+        button.predict-btn:active {
+            transform: translateY(1px);
+        }
+
+        button.predict-btn:disabled {
+            background: #475569;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .loader {
+            display: none;
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text-muted);
+        }
+
+        #results {
+            display: none;
+            margin-top: 2rem;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-card {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .result-header {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .result-main {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--success-color);
+            margin-bottom: 1rem;
+        }
+
+        .prob-bar-container {
+            display: flex;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            margin-top: 0.5rem;
+        }
+
+        .prob-bar {
+            height: 100%;
+        }
+
+        .prob-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Khởi tạo Prediction API v3</h1>
+
+        <div
+            style="margin-bottom: 2rem; background: rgba(15, 23, 42, 0.5); padding: 1.5rem; border-radius: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.05);">
+            <label for="apiUrl">API Link (Paste link của BE vào đây)</label>
+            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                <input type="text" id="apiUrl" value="http://127.0.0.1:5050"
+                    style="flex: 1; padding: 0.75rem; border-radius: 0.5rem; background-color: var(--bg-color); color: var(--text-color); border: 1px solid rgba(255,255,255,0.1); font-size: 1rem; outline: none; transition: border-color 0.2s;">
+                <button id="connectBtn" onclick="loadTeams()"
+                    style="padding: 0.75rem 1.5rem; background: var(--primary-color); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Connect</button>
+            </div>
+            <small style="color: var(--warning-color); display: block; margin-top: 0.5rem;" id="apiStatus">Mặc định đang
+                dùng local test: http://127.0.0.1:5050</small>
+        </div>
+
+        <div class="match-selector">
+            <div class="team-select">
+                <label for="leagueSelect">Chọn Giải Đấu</label>
+                <select id="leagueSelect" style="margin-bottom: 1rem;">
+                    <option value="">Đang tải giải đấu...</option>
+                </select>
+
+                <label for="homeTeam">Đội Nhà (Home)</label>
+                <select id="homeTeam" disabled>
+                    <option value="">-- Chọn Đội Nhà --</option>
+                </select>
+            </div>
+
+            <div class="vs-badge" style="margin-top: 3.5rem;">VS</div>
+
+            <div class="team-select">
+                <label style="visibility: hidden;">Giải Đấu</label>
+                <select style="visibility: hidden; margin-bottom: 1rem;"></select>
+
+                <label for="awayTeam">Đội Khách (Away)</label>
+                <select id="awayTeam" disabled>
+                    <option value="">-- Chọn Đội Khách --</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="predictBtn" class="predict-btn" disabled onclick="makePrediction()">Dự đoán kết quả</button>
+
+        <div id="loader" class="loader">Đang tính toán rủi ro qua mô hình ML...</div>
+
+        <div id="results">
+            <div class="result-card">
+                <div class="result-header">Kết quả 1x2 (Thắng/Hòa/Thua)</div>
+                <div id="res-1x2-main" class="result-main">-</div>
+
+                <div class="prob-bar-container">
+                    <div id="bar-home" class="prob-bar" style="background-color: var(--primary-color);"></div>
+                    <div id="bar-draw" class="prob-bar" style="background-color: var(--warning-color);"></div>
+                    <div id="bar-away" class="prob-bar" style="background-color: var(--danger-color);"></div>
+                </div>
+                <div class="prob-labels">
+                    <span id="label-home">Home 0%</span>
+                    <span id="label-draw">Draw 0%</span>
+                    <span id="label-away">Away 0%</span>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="result-card">
+                    <div class="result-header">Tài/Xỉu (Over/Under 2.5)</div>
+                    <div id="res-ou-main" class="result-main">-</div>
+                    <div id="res-ou-probs" style="font-size: 0.875rem; color: var(--text-muted);">-</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-header">Kèo Mở Rộng</div>
+                    <div style="margin-bottom: 0.5rem;">
+                        <span style="color: var(--text-muted); font-size: 0.875rem;">Chấp Châu Á:</span>
+                        <strong id="res-hc-main" style="color: var(--text-color); float: right;">-</strong>
+                    </div>
+                    <div>
+                        <span style="color: var(--text-muted); font-size: 0.875rem;">Cả 2 Ghi Bàn (BTTS):</span>
+                        <strong id="res-btts-main" style="color: var(--text-color); float: right;">-</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card">
+                <div class="result-header">Tỷ số tham khảo (Poisson Models)</div>
+                <div id="res-scores" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <!-- Dữ liệu được đẩy vào đây -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let leagueData = {}; // { "Premier League": ["Arsenal", ...], ... }
+
+        function getApiBase() {
+            let url = document.getElementById('apiUrl').value.trim();
+            if (url.endsWith('/')) {
+                url = url.slice(0, -1);
+            }
+            return url;
+        }
+
+        // 1. Load Leagues on Startup or Connect
+        async function loadTeams() {
+            const apiBase = getApiBase();
+            const btn = document.getElementById('connectBtn');
+            const status = document.getElementById('apiStatus');
+            btn.innerText = "Đang kết nối...";
+            status.style.color = "var(--text-muted)";
+            status.innerText = "Đang kiểm tra dữ liệu từ " + apiBase;
+
+            try {
+                const res = await fetch(`${apiBase}/teams-by-league`);
+                leagueData = await res.json();
+
+                const leagueSelect = document.getElementById('leagueSelect');
+                leagueSelect.innerHTML = '<option value="">-- Chọn Giải Đấu --</option>';
+
+                Object.keys(leagueData).sort().forEach(league => {
+                    leagueSelect.innerHTML += `<option value="${league}">${league}</option>`;
+                });
+
+                leagueSelect.addEventListener('change', populateTeams);
+
+                const homeSelect = document.getElementById('homeTeam');
+                const awaySelect = document.getElementById('awayTeam');
+                homeSelect.addEventListener('change', checkReady);
+                awaySelect.addEventListener('change', checkReady);
+
+                btn.innerText = "Connect";
+                status.style.color = "var(--success-color)";
+                status.innerText = "Đã kết nối thành công! Tải xong " + Object.keys(leagueData).length + " giải đấu.";
+
+            } catch (error) {
+                console.error("Lỗi khi tải danh sách đội:", error);
+                document.getElementById('leagueSelect').innerHTML = '<option value="">Lỗi kết nối API!</option>';
+                btn.innerText = "Connect";
+                status.style.color = "var(--danger-color)";
+                status.innerText = "Lỗi kết nối! Đảm bảo link BE đã bật CORS và đang chạy.";
+            }
+        }
+
+        function populateTeams() {
+            const league = document.getElementById('leagueSelect').value;
+            const homeSelect = document.getElementById('homeTeam');
+            const awaySelect = document.getElementById('awayTeam');
+
+            homeSelect.innerHTML = '<option value="">-- Chọn Đội Nhà --</option>';
+            awaySelect.innerHTML = '<option value="">-- Chọn Đội Khách --</option>';
+
+            if (!league) {
+                homeSelect.disabled = true;
+                awaySelect.disabled = true;
+                checkReady();
+                return;
+            }
+
+            const teams = leagueData[league] || [];
+            teams.forEach(team => {
+                homeSelect.innerHTML += `<option value="${team}">${team}</option>`;
+                awaySelect.innerHTML += `<option value="${team}">${team}</option>`;
+            });
+
+            homeSelect.disabled = false;
+            awaySelect.disabled = false;
+            checkReady();
+        }
+
+        function checkReady() {
+            const home = document.getElementById('homeTeam').value;
+            const away = document.getElementById('awayTeam').value;
+            const btn = document.getElementById('predictBtn');
+
+            btn.disabled = !(home && away && home !== away);
+        }
+
+        // 2. Make Prediction Call
+        async function makePrediction() {
+            const home = document.getElementById('homeTeam').value;
+            const away = document.getElementById('awayTeam').value;
+
+            document.getElementById('predictBtn').disabled = true;
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('loader').style.display = 'block';
+
+            const apiBase = getApiBase();
+
+            try {
+                const res = await fetch(`${apiBase}/predict-by-name`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ home_name: home, away_name: away })
+                });
+
+                const data = await res.json();
+
+                if (data.success) {
+                    renderResults(data.predictions);
+                } else {
+                    alert("Lỗi từ API: " + data.error);
+                }
+            } catch (error) {
+                alert("Không thể kết nối tới Server API tại: " + apiBase);
+            } finally {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('predictBtn').disabled = false;
+            }
+        }
+
+        function renderResults(preds) {
+            document.getElementById('results').style.display = 'block';
+
+            // 1x2
+            document.getElementById('res-1x2-main').innerText = preds['1x2'].result;
+            const p1x2 = preds['1x2'].probabilities;
+
+            document.getElementById('bar-home').style.width = `${p1x2.home_win * 100}%`;
+            document.getElementById('bar-draw').style.width = `${p1x2.draw * 100}%`;
+            document.getElementById('bar-away').style.width = `${p1x2.away_win * 100}%`;
+
+            document.getElementById('label-home').innerText = `Home ${(p1x2.home_win * 100).toFixed(1)}%`;
+            document.getElementById('label-draw').innerText = `Draw ${(p1x2.draw * 100).toFixed(1)}%`;
+            document.getElementById('label-away').innerText = `Away ${(p1x2.away_win * 100).toFixed(1)}%`;
+
+            // O/U
+            document.getElementById('res-ou-main').innerText = preds.over_under.prediction;
+            const ou = preds.over_under.probabilities;
+            document.getElementById('res-ou-probs').innerText = `Over: ${(ou.over * 100).toFixed(1)}% | Under: ${(ou.under * 100).toFixed(1)}%`;
+
+            // Advanced
+            document.getElementById('res-hc-main').innerText = preds.handicap.suggestion;
+            document.getElementById('res-btts-main').innerText = `${preds.btts.prediction} (${(preds.btts.probability * 100).toFixed(1)}%)`;
+
+            // Scores
+            const scoreDiv = document.getElementById('res-scores');
+            scoreDiv.innerHTML = '';
+            preds.score.top_scores.slice(0, 3).forEach(s => {
+                scoreDiv.innerHTML += `
+                <div style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600;">
+                    ${s.score} <span style="font-size:0.75rem; color:var(--text-muted); font-weight: normal; margin-left: 0.5rem;">${(s.probability * 100).toFixed(1)}%</span>
+                </div>
+            `;
+            });
+        }
+
+        // Tải danh sách khi mở web
+        window.onload = loadTeams;
+    </script>
+
+</body>
+
+</html>
