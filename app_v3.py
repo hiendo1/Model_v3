@@ -112,7 +112,7 @@ def predict_by_name():
         data = request.get_json()
         h_name = data.get('home_name')
         a_name = data.get('away_name')
-
+        match_date = data.get('match_date') # Optional date field
         if not h_name or not a_name:
             return jsonify({'error': 'Please provide home_name and away_name'}), 400
 
@@ -178,6 +178,9 @@ def predict_by_name():
 
         result = predict_internal(features)
         result['match'] = {'home': h_name, 'away': a_name}
+        if match_date:
+            result['match']['date'] = match_date
+            
         return jsonify(result)
 
     except Exception as e:
