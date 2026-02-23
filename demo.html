@@ -253,6 +253,13 @@
             </div>
         </div>
 
+        <div
+            style="margin-bottom: 2rem; background: rgba(15, 23, 42, 0.5); padding: 1.5rem; border-radius: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.05);">
+            <label for="matchDate">Ngày Thi Đấu (Không bắt buộc)</label>
+            <input type="date" id="matchDate"
+                style="width: 100%; box-sizing: border-box; margin-top: 0.5rem; padding: 0.75rem; border-radius: 0.5rem; background-color: var(--bg-color); color: var(--text-color); border: 1px solid rgba(255,255,255,0.1); font-size: 1rem; outline: none; display: block;">
+        </div>
+
         <button id="predictBtn" class="predict-btn" disabled onclick="makePrediction()">Dự đoán kết quả</button>
 
         <div id="loader" class="loader">Đang tính toán rủi ro qua mô hình ML...</div>
@@ -392,6 +399,7 @@
         async function makePrediction() {
             const home = document.getElementById('homeTeam').value;
             const away = document.getElementById('awayTeam').value;
+            const date = document.getElementById('matchDate').value;
 
             document.getElementById('predictBtn').disabled = true;
             document.getElementById('results').style.display = 'none';
@@ -403,7 +411,11 @@
                 const res = await fetch(`${apiBase}/predict-by-name`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ home_name: home, away_name: away })
+                    body: JSON.stringify({
+                        home_name: home,
+                        away_name: away,
+                        match_date: date
+                    })
                 });
 
                 const data = await res.json();
@@ -423,6 +435,14 @@
 
         function renderResults(preds) {
             document.getElementById('results').style.display = 'block';
+
+            // Cập nhật tiêu chuẩn cho tiêu đề kết quả nếu có ngày
+            const matchInfo = document.querySelector('.result-card .result-header');
+            if (preds.match && preds.match.date) {
+                matchInfo.innerText = `Kết quả 1x2 (${preds.match.date})`;
+            } else {
+                matchInfo.innerText = `Kết quả 1x2 (Thắng/Hòa/Thua)`;
+            }
 
             // 1x2
             document.getElementById('res-1x2-main').innerText = preds['1x2'].result;
