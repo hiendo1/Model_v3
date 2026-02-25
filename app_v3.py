@@ -378,6 +378,18 @@ def predict_internal(features_dict):
     prob_under = float(probs_ou[ou_classes.index(0)]) if 0 in ou_classes else 0.5
     prob_over = float(probs_ou[ou_classes.index(1)]) if 1 in ou_classes else 0.5
 
+    # --- BTTS Prediction ---
+    model_btts = best_models.get('BTTS')
+    if model_btts:
+        probs_btts = get_prediction(model_btts, X_scaled, is_proba=True)[0]
+        btts_classes = list(get_classes(model_btts))
+        prob_btts_no = float(probs_btts[btts_classes.index(0)]) if 0 in btts_classes else 0.5
+        prob_btts_yes = float(probs_btts[btts_classes.index(1)]) if 1 in btts_classes else 0.5
+    else:
+        # Fallback if model not yet updated
+        prob_btts_yes = 0.5
+        prob_btts_no = 0.5
+
     # --- Goal Prediction ---
     xg_h = float(get_prediction(best_models['Home Goals'], X_scaled, is_proba=False)[0])
     xg_a = float(get_prediction(best_models['Away Goals'], X_scaled, is_proba=False)[0])
@@ -436,6 +448,20 @@ def predict_internal(features_dict):
                 prob_matrix[h, a] *= (target_under_final / max(p_u25_p, 0.0001))
     prob_matrix /= np.sum(prob_matrix)
 
+    # PASS 3: BTTS Scaling
+    p_btts_yes_p = 1.0 - (np.sum(prob_matrix[0, :]) + np.sum(prob_matrix[:, 0]) - prob_matrix[0, 0])
+    p_btts_no_p = 1.0 - p_btts_yes_p
+    target_btts_yes_final = (prob_btts_yes * ML_WEIGHT) + (p_btts_yes_p * (1 - ML_WEIGHT))
+    target_btts_no_final = 1.0 - target_btts_yes_final
+
+    for h in range(12):
+        for a in range(12):
+            if h > 0 and a > 0: # BTTS = Yes
+                prob_matrix[h, a] *= (target_btts_yes_final / max(p_btts_yes_p, 0.0001))
+            else: # BTTS = No
+                prob_matrix[h, a] *= (target_btts_no_final / max(p_btts_no_p, 0.0001))
+    prob_matrix /= np.sum(prob_matrix)
+
     # --- HIGH SCORE CALIBRATION ---
     h_hsr = float(features_dict.get('h_roll_high_score_rate', 0.3))
     a_hsr = float(features_dict.get('a_roll_high_score_rate', 0.3))
@@ -453,15 +479,32 @@ def predict_internal(features_dict):
     final_a = sum(prob_matrix[h, a] for h in range(12) for a in range(12) if h < a)
     final_o25 = 1.0 - sum(prob_matrix[h, a] for h in range(3) for a in range(3) if h + a <= 2)
 
-    # --- Top Scores ---
-    indices = np.unravel_index(np.argsort(prob_matrix, axis=None)[::-1], prob_matrix.shape)
-    top_scores = []
-    for i in range(5):
-        sh, sa = int(indices[0][i]), int(indices[1][i])
-        top_scores.append({
-            'score': f"{sh}-{sa}",
-            'probability': round(float(prob_matrix[sh, sa]), 4)
-        })
+    # --- Top Scores (Consensus-Aware) ---
+    scores_list = []
+    for h in range(7):
+        for a in range(7):
+            p = prob_matrix[h, a]
+            
+            # Outcome Alignment Weights
+            # If a score aligns with the main predictions, give it a tiny boost for "visual stability"
+            weight = 1.0
+            if (final_o25 > 0.5 and h + a > 2) or (final_o25 <= 0.5 and h + a <= 2):
+                weight *= 1.05
+            if (target_btts_yes_final > 0.5 and h > 0 and a > 0) or (target_btts_yes_final <= 0.5 and (h == 0 or a == 0)):
+                weight *= 1.05
+            if (final_h > final_a and h > a) or (final_a > final_h and a > h) or (final_d > final_h and final_d > final_a and h == a):
+                weight *= 1.05
+
+            scores_list.append({
+                'score': f"{h}-{a}",
+                'probability': float(p),
+                'display_p': round(float(p), 4),
+                'rank_score': p * weight
+            })
+    
+    # Sort by rank_score (probability + tiny alignment boost)
+    scores_list.sort(key=lambda x: x['rank_score'], reverse=True)
+    top_scores = [{'score': s['score'], 'probability': s['display_p']} for s in scores_list[:5]]
 
     # --- Smart Score Sync ---
     def best_score_for(cond_fn):
