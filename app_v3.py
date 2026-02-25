@@ -114,7 +114,6 @@ def predict_by_name():
         h_name = data.get('home_name')
         a_name = data.get('away_name')
         match_date = data.get('match_date')
-        
         if not h_name or not a_name:
             return jsonify({'error': 'Please provide home_name and away_name'}), 400
 
