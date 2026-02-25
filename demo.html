@@ -319,6 +319,13 @@
             </div>
 
             <div class="result-card">
+                <div class="result-header">Gợi Ý Thông Minh (Trend Analysis)</div>
+                <div id="res-smart" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <!-- Gợi ý thông minh -->
+                </div>
+            </div>
+
+            <div class="result-card">
                 <div class="result-header">Tỷ số tham khảo (Poisson Models)</div>
                 <div id="res-scores" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                     <!-- Dữ liệu được đẩy vào đây -->
@@ -486,13 +493,36 @@
             // Scores
             const scoreDiv = document.getElementById('res-scores');
             scoreDiv.innerHTML = '';
-            preds.score.top_scores.slice(0, 3).forEach(s => {
+            preds.score.top_scores.forEach(s => {
                 scoreDiv.innerHTML += `
                 <div style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600;">
                     ${s.score} <span style="font-size:0.75rem; color:var(--text-muted); font-weight: normal; margin-left: 0.5rem;">${(s.probability * 100).toFixed(1)}%</span>
                 </div>
             `;
             });
+
+            // Smart Suggestions
+            const smartDiv = document.getElementById('res-smart');
+            smartDiv.innerHTML = '';
+            if (preds.smart_suggestions) {
+                const s = preds.smart_suggestions;
+                if (s.primary) {
+                    smartDiv.innerHTML += `
+                        <div style="background: rgba(30, 215, 96, 0.1); padding: 0.75rem; border-radius: 0.5rem; border-left: 4px solid var(--success-color);">
+                            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Trọng tâm ${s.primary.type}:</div>
+                            <div style="font-size: 1.1rem; font-weight: 700;">${s.primary.score} <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">(${(s.primary.probability * 100).toFixed(1)}%)</span></div>
+                        </div>
+                    `;
+                }
+                if (s.trend) {
+                    smartDiv.innerHTML += `
+                        <div style="background: rgba(255, 255, 255, 0.05); padding: 0.75rem; border-radius: 0.5rem; border-left: 4px solid var(--primary-color);">
+                            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Xu hướng kết quả (${s.trend.type}):</div>
+                            <div style="font-size: 1.1rem; font-weight: 700;">${s.trend.score} <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">(${(s.trend.probability * 100).toFixed(1)}%)</span></div>
+                        </div>
+                    `;
+                }
+            }
         }
 
         // Tải danh sách khi mở web
