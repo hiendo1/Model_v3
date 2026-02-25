@@ -48,7 +48,8 @@ ML_WEIGHT = 0.35  # Must match predict_gui_v3.py
 def home():
     return jsonify({
         "message": "Football Prediction API v3",
-        "version": "3.0",
+        'version': '4.1.2-synchronized',
+        'last_updated': '2026-02-25',
         "endpoints": {
             "/predict-by-name": "POST - Best for FE (only needs team names)",
             "/predict-simple": "POST - Manual stats input",
