@@ -8,6 +8,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import joblib
 import numpy as np
+import pandas as pd
 import os
 import json
 from scipy.stats import poisson
@@ -37,7 +38,7 @@ if os.path.exists(STATS_PATH):
         print(f"[ERROR] Failed to load stats lookup: {e}")
 
 print(f"[OK] Model v3 loaded. Features: {len(feature_names)}")
-print(f"  Best models: { {k: type(v).__name__ for k, v in best_models.items()} }")
+print(f"  Best models: { {k: (v.get('type') if type(v) is dict else type(v).__name__) for k, v in best_models.items()} }")
 
 # --- Configuration ---
 ML_WEIGHT = 0.35  # Must match predict_gui_v3.py
@@ -65,7 +66,7 @@ def health():
         "model_version": "v3",
         "model_loaded": True,
         "features_count": len(feature_names),
-        "best_models": {k: type(v).__name__ for k, v in best_models.items()}
+        "best_models": {k: (v.get("type") if type(v) is dict else type(v).__name__) for k, v in best_models.items()}
     })
 
 
@@ -105,83 +106,87 @@ def predict():
 @app.route('/predict-by-name', methods=['POST'])
 def predict_by_name():
     """
-    Production-ready endpoint for Frontend.
-    Input: {"home_name": "Arsenal FC", "away_name": "Liverpool FC"}
+    Production-ready endpoint for Frontend (v4).
+    Input: {"home_name": "Arsenal FC", "away_name": "Liverpool FC", "match_date": "2024-05-19"}
     """
     try:
         data = request.get_json()
         h_name = data.get('home_name')
         a_name = data.get('away_name')
-        match_date = data.get('match_date') # Optional date field
+        match_date = data.get('match_date')
+        
         if not h_name or not a_name:
             return jsonify({'error': 'Please provide home_name and away_name'}), 400
 
         if not stats_lookup:
-            return jsonify({'error': 'Stats database not loaded on server. API misconfigured.'}), 500
+            return jsonify({'error': 'Stats database not loaded on server.'}), 500
 
         team_db = stats_lookup.get('team_stats', {})
         h2h_db = stats_lookup.get('h2h_stats', {})
 
-        if h_name not in team_db:
-            return jsonify({'error': f'Team "{h_name}" not found in database. Check /teams for valid names.'}), 404
-        if a_name not in team_db:
-            return jsonify({'error': f'Team "{a_name}" not found in database.'}), 404
+        if h_name not in team_db or a_name not in team_db:
+            return jsonify({'error': f'One or both teams not found in database.'}), 404
 
         h_stats = team_db[h_name]
         a_stats = team_db[a_name]
 
         # 1. Start with H2H
-        # Try both directions
         h2h = h2h_db.get(f"{h_name}|{a_name}")
         if not h2h:
-            reverse_h2h = h2h_db.get(f"{a_name}|{h_name}")
-            if reverse_h2h:
-                # Reverse the stats
+            rev = h2h_db.get(f"{a_name}|{h_name}")
+            if rev:
                 h2h = {
-                    'h2h_home_wins': reverse_h2h['h2h_away_wins'],
-                    'h2h_draws': reverse_h2h['h2h_draws'],
-                    'h2h_away_wins': reverse_h2h['h2h_home_wins'],
-                    'h2h_avg_goals_home': reverse_h2h['h2h_avg_goals_away'],
-                    'h2h_avg_goals_away': reverse_h2h['h2h_avg_goals_home'],
-                    'h2h_draw_rate': reverse_h2h['h2h_draw_rate']
+                    'h2h_home_wins': rev['h2h_away_wins'], 'h2h_draws': rev['h2h_draws'], 'h2h_away_wins': rev['h2h_home_wins'],
+                    'h2h_avg_goals_home': rev['h2h_avg_goals_away'], 'h2h_avg_goals_away': rev['h2h_avg_goals_home'],
+                    'h2h_draw_rate': rev['h2h_draw_rate']
                 }
             else:
-                # Neutral default
-                h2h = {
-                    'h2h_home_wins': 0.33, 'h2h_draws': 0.33, 'h2h_away_wins': 0.33,
-                    'h2h_avg_goals_home': 1.5, 'h2h_avg_goals_away': 1.2, 'h2h_draw_rate': 0.33
-                }
+                h2h = {'h2h_home_wins': 0.33, 'h2h_draws': 0.33, 'h2h_away_wins': 0.33, 'h2h_avg_goals_home': 1.4, 'h2h_avg_goals_away': 1.2, 'h2h_draw_rate': 0.33}
 
-        # 2. Derive 29 features
+        # 2. Derive v4 features
         features = {}
         features.update(h2h)
         
-        # Relative
-        features['rel_goals_for'] = h_stats['roll_goals_for'] - a_stats['roll_goals_for']
-        features['rel_xg_for'] = h_stats['roll_xg_for'] - a_stats['roll_xg_for']
-        features['rel_shots_for'] = h_stats['roll_shots_for'] - a_stats['roll_shots_for']
+        league = h_stats.get('league', a_stats.get('league', 'Unknown'))
+        state = model_package.get("v4_state", {}).get(league, {})
         
-        # Roll
-        for k, v in h_stats.items(): features[f"h_{k}"] = v
-        for k, v in a_stats.items(): features[f"a_{k}"] = v
-        
-        # Draw Specific
-        h_gc, a_gc = h_stats['roll_goals_against'], a_stats['roll_goals_against']
-        h_gs, a_gs = h_stats['roll_goals_for'], a_stats['roll_goals_for']
-        h_xg, a_xg = h_stats['roll_xg_for'], a_stats['roll_xg_for']
-        
-        features['def_similarity'] = 1.0 / (1.0 + abs(h_gc - a_gc))
-        features['off_similarity'] = 1.0 / (1.0 + abs(h_gs - a_gs))
-        features['xg_convergence'] = 1.0 / (1.0 + abs(h_xg - a_xg))
-        features['goal_balance'] = 1.0 / (1.0 + abs(h_gs - h_gc) + abs(a_gs - a_gc))
-        features['h2h_draw_rate'] = h2h['h2h_draw_rate']
+        # Rolling Features
+        metrics = ['goals_for', 'goals_against', 'xg_for', 'xg_against', 'shots_for', 'shots_against', 'goals_std', 'high_score_rate']
+        for m in metrics:
+            h_val = float(h_stats.get(f"roll_{m}", 0))
+            a_val = float(a_stats.get(f"roll_{m}", 0))
+            features[f"h_roll_{m}"] = h_val
+            features[f"a_roll_{m}"] = a_val
+            if m in ['goals_for', 'xg_for', 'shots_for']:
+                features[f"rel_{m}"] = h_val - a_val
 
-        result = predict_internal(features)
-        result['match'] = {'home': h_name, 'away': a_name}
-        if match_date:
-            result['match']['date'] = match_date
-            
-        return jsonify(result)
+        # v4 state (Elo/Fatigue)
+        h_elo = state.get("elo", {}).get(h_name, 1500.0)
+        a_elo = state.get("elo", {}).get(a_name, 1500.0)
+        features["h_elo"] = h_elo
+        features["a_elo"] = a_elo
+        features["rel_elo"] = h_elo - a_elo
+        
+        curr_date = pd.to_datetime(match_date) if match_date else pd.Timestamp.now()
+        h_last = state.get("last_date", {}).get(h_name)
+        a_last = state.get("last_date", {}).get(a_name)
+        features["h_rest"] = min((curr_date - pd.to_datetime(h_last)).days if h_last else 15, 15)
+        features["a_rest"] = min((curr_date - pd.to_datetime(a_last)).days if a_last else 15, 15)
+        
+        features["h_venue_roll_goals"] = h_stats.get("venue_roll_goals", h_stats.get("roll_goals_for", 1.2))
+        features["a_venue_roll_goals"] = a_stats.get("venue_roll_goals", a_stats.get("roll_goals_for", 1.2))
+
+        # Draw Specific
+        features['def_similarity'] = 1.0 / (1.0 + abs(features['h_roll_goals_against'] - features['a_roll_goals_against']))
+        features['off_similarity'] = 1.0 / (1.0 + abs(features['h_roll_goals_for'] - features['a_roll_goals_for']))
+        features['xg_convergence'] = 1.0 / (1.0 + abs(features['h_roll_xg_for'] - features['a_roll_xg_for']))
+        features['goal_balance'] = 1.0 / (1.0 + abs(features['h_roll_goals_for'] - features['h_roll_goals_against']) + 
+                                          abs(features['a_roll_goals_for'] - features['a_roll_goals_against']))
+        features['h2h_draw_rate'] = h2h.get('h2h_draw_rate', 0.33)
+
+        prediction_data = predict_internal(features)
+        prediction_data['match'] = {'home': h_name, 'away': a_name, 'date': str(curr_date.date())}
+        return jsonify(prediction_data)
 
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
@@ -285,6 +290,12 @@ def predict_simple():
         features['a_roll_goals_std'] = away.get('goals_std', 1.0)
         features['a_roll_high_score_rate'] = away.get('high_score_rate', 0.3)
 
+        # === V4 FEATURES (Defaults) ===
+        features['h_elo'] = 1500.0; features['a_elo'] = 1500.0; features['rel_elo'] = 0.0
+        features['h_rest'] = 15; features['a_rest'] = 15
+        features['h_venue_roll_goals'] = home.get('avg_goals_scored', 1.2)
+        features['a_venue_roll_goals'] = away.get('avg_goals_scored', 1.2)
+
         # === DRAW-SPECIFIC FEATURES ===
         h_gc = features['h_roll_goals_against']
         a_gc = features['a_roll_goals_against']
@@ -297,7 +308,7 @@ def predict_simple():
         features['off_similarity'] = 1.0 / (1.0 + abs(h_gs - a_gs))
         features['xg_convergence'] = 1.0 / (1.0 + abs(h_xg - a_xg))
         features['goal_balance'] = 1.0 / (1.0 + abs(h_gs - h_gc) + abs(a_gs - a_gc))
-        features['h2h_draw_rate'] = features['h2h_draws']
+        features['h2h_draw_rate'] = features.get('h2h_draws', 0.33)
 
         # Predict
         result = predict_internal(features)
@@ -309,6 +320,28 @@ def predict_simple():
 
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
+
+
+def get_prediction(model_info, X_scaled, is_proba=False):
+    """Helper to handle both single models and soft voting ensembles."""
+    if type(model_info) is dict and model_info.get("type") == "ensemble":
+        w_rf = model_info["weight_rf"]
+        w_xgb = model_info["weight_xgb"]
+        if is_proba:
+            return w_rf * model_info["rf"].predict_proba(X_scaled) + w_xgb * model_info["xgb"].predict_proba(X_scaled)
+        else:
+            return w_rf * model_info["rf"].predict(X_scaled) + w_xgb * model_info["xgb"].predict(X_scaled)
+    elif type(model_info) is dict and model_info.get("type") == "single":
+        model = model_info["model"]
+    else:
+        model = model_info # backward compatibility
+        
+    return model.predict_proba(X_scaled) if is_proba else model.predict(X_scaled)
+
+def get_classes(model_info):
+    if type(model_info) is dict:
+        return model_info["classes_"]
+    return model_info.classes_
 
 
 def predict_internal(features_dict):
@@ -330,25 +363,25 @@ def predict_internal(features_dict):
     X_scaled = scaler.transform(X)
 
     # --- 1X2 Prediction ---
-    clf_1x2 = best_models['1X2']
-    probs_1x2 = clf_1x2.predict_proba(X_scaled)[0]
+    model_1x2 = best_models['1X2']
+    probs_1x2 = get_prediction(model_1x2, X_scaled, is_proba=True)[0]
     # Map model classes to Away(0), Draw(1), Home(2)
-    classes = list(clf_1x2.classes_)
+    classes = list(get_classes(model_1x2))
 
     prob_away = float(probs_1x2[classes.index(0)]) if 0 in classes else 0.33
     prob_draw = float(probs_1x2[classes.index(1)]) if 1 in classes else 0.33
     prob_home = float(probs_1x2[classes.index(2)]) if 2 in classes else 0.33
 
     # --- O/U Prediction ---
-    clf_ou = best_models['O/U 2.5']
-    probs_ou = clf_ou.predict_proba(X_scaled)[0]
-    ou_classes = list(clf_ou.classes_)
+    model_ou = best_models['O/U 2.5']
+    probs_ou = get_prediction(model_ou, X_scaled, is_proba=True)[0]
+    ou_classes = list(get_classes(model_ou))
     prob_under = float(probs_ou[ou_classes.index(0)]) if 0 in ou_classes else 0.5
     prob_over = float(probs_ou[ou_classes.index(1)]) if 1 in ou_classes else 0.5
 
     # --- Goal Prediction ---
-    xg_h = float(best_models['Home Goals'].predict(X_scaled)[0])
-    xg_a = float(best_models['Away Goals'].predict(X_scaled)[0])
+    xg_h = float(get_prediction(best_models['Home Goals'], X_scaled, is_proba=False)[0])
+    xg_a = float(get_prediction(best_models['Away Goals'], X_scaled, is_proba=False)[0])
 
     # --- DYNAMIC LAMBDA STRETCHING ---
     ou_confidence = abs(prob_over - 0.5)

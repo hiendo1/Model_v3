@@ -206,6 +206,23 @@
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
+
+        /* Improved Date Picker Styles */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+            opacity: 0.8;
+            padding: 5px;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator:hover {
+            opacity: 1;
+        }
+
+        input[type="date"] {
+            color-scheme: dark;
+            /* Helps browsers render dark themes correctly */
+        }
     </style>
 </head>
 
@@ -255,9 +272,9 @@
 
         <div
             style="margin-bottom: 2rem; background: rgba(15, 23, 42, 0.5); padding: 1.5rem; border-radius: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.05);">
-            <label for="matchDate">Ngày Thi Đấu (Không bắt buộc)</label>
+            <label for="matchDate" style="display: block; margin-bottom: 0.5rem;">Ngày Thi Đấu</label>
             <input type="date" id="matchDate"
-                style="width: 100%; box-sizing: border-box; margin-top: 0.5rem; padding: 0.75rem; border-radius: 0.5rem; background-color: var(--bg-color); color: var(--text-color); border: 1px solid rgba(255,255,255,0.1); font-size: 1rem; outline: none; display: block;">
+                style="width: 100%; box-sizing: border-box; padding: 0.85rem; border-radius: 0.5rem; background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--primary-color); font-size: 1rem; outline: none; display: block; cursor: pointer;">
         </div>
 
         <button id="predictBtn" class="predict-btn" disabled onclick="makePrediction()">Dự đoán kết quả</button>
@@ -421,7 +438,7 @@
                 const data = await res.json();
 
                 if (data.success) {
-                    renderResults(data.predictions);
+                    renderResults(data);
                 } else {
                     alert("Lỗi từ API: " + data.error);
                 }
@@ -433,13 +450,14 @@
             }
         }
 
-        function renderResults(preds) {
+        function renderResults(data) {
             document.getElementById('results').style.display = 'block';
+            const preds = data.predictions;
 
             // Cập nhật tiêu chuẩn cho tiêu đề kết quả nếu có ngày
             const matchInfo = document.querySelector('.result-card .result-header');
-            if (preds.match && preds.match.date) {
-                matchInfo.innerText = `Kết quả 1x2 (${preds.match.date})`;
+            if (data.match && data.match.date && data.match.date !== "N/A") {
+                matchInfo.innerText = `Kết quả 1x2 (${data.match.date})`;
             } else {
                 matchInfo.innerText = `Kết quả 1x2 (Thắng/Hòa/Thua)`;
             }
