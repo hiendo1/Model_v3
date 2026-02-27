@@ -48,13 +48,14 @@ ML_WEIGHT = 0.60  # Manual weight (Optimized via Backtest)
 def home():
     return jsonify({
         "message": "Football Prediction API v3",
-        'version': '4.1.2-synchronized',
+        'version': '3.1.2',
         'last_updated': '2026-02-25',
         "endpoints": {
-            "/predict-by-name": "POST - Best for FE (only needs team names)",
+            "/predict-by-name": "POST - Required: [home_name, away_name, league, match_date]",
             "/predict-simple": "POST - Manual stats input",
             "/health": "GET - Status check",
-            "/features": "GET - Required feature list"
+            "/features": "GET - Required feature list",
+            "/teams-by-league": "GET - Get all teams grouped by league"
         },
         "status": "online"
     })
