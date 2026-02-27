@@ -81,7 +81,7 @@ def get_features():
             "home_rolling": [f for f in feature_names if f.startswith('h_')],
             "away_rolling": [f for f in feature_names if f.startswith('a_')],
             "relative": [f for f in feature_names if f.startswith('rel_')],
-            "draw_specific": [f for f in feature_names if f in ['def_similarity', 'off_similarity', 'xg_convergence', 'goal_balance', 'h2h_draw_rate']]
+            "draw_specific": [f for f in feature_names if f in ['h_att_v_a_def', 'a_att_v_h_def', 'rel_att_v_def', 'xg_matchup_h', 'xg_matchup_a', 'goal_balance', 'h2h_draw_rate']]
         }
     })
 
@@ -184,13 +184,16 @@ def predict_by_name():
         features["h_venue_roll_goals"] = h_stats.get("venue_roll_goals", h_stats.get("roll_goals_for", 1.2))
         features["a_venue_roll_goals"] = a_stats.get("venue_roll_goals", a_stats.get("roll_goals_for", 1.2))
 
-        # Draw Specific
-        features['def_similarity'] = 1.0 / (1.0 + abs(features['h_roll_goals_against'] - features['a_roll_goals_against']))
-        features['off_similarity'] = 1.0 / (1.0 + abs(features['h_roll_goals_for'] - features['a_roll_goals_for']))
-        features['xg_convergence'] = 1.0 / (1.0 + abs(features['h_roll_xg_for'] - features['a_roll_xg_for']))
-        features['goal_balance'] = 1.0 / (1.0 + abs(features['h_roll_goals_for'] - features['h_roll_goals_against']) + 
-                                          abs(features['a_roll_goals_for'] - features['a_roll_goals_against']))
-        features['h2h_draw_rate'] = h2h.get('h2h_draw_rate', 0.33)
+        # Directional Matchups (v4.1)
+        features["h_att_v_a_def"] = features["h_roll_goals_for"] - features["a_roll_goals_against"]
+        features["a_att_v_h_def"] = features["a_roll_goals_for"] - features["h_roll_goals_against"]
+        features["rel_att_v_def"] = features["h_att_v_a_def"] - features["a_att_v_h_def"]
+        
+        features["xg_matchup_h"] = features["h_roll_xg_for"] - features["a_roll_xg_against"]
+        features["xg_matchup_a"] = features["a_roll_xg_for"] - features["h_roll_xg_against"]
+        features["goal_balance"] = (features["h_roll_goals_for"] - features["h_roll_goals_against"]) - \
+                                    (features["a_roll_goals_for"] - features["a_roll_goals_against"])
+        features["h2h_draw_rate"] = h2h.get("h2h_draw_rate", 0.33)
 
         prediction_data = predict_internal(features)
         prediction_data['match'] = {'home': h_name, 'away': a_name, 'date': str(curr_date.date())}
@@ -304,7 +307,7 @@ def predict_simple():
         features['h_venue_roll_goals'] = home.get('avg_goals_scored', 1.2)
         features['a_venue_roll_goals'] = away.get('avg_goals_scored', 1.2)
 
-        # === DRAW-SPECIFIC FEATURES ===
+        # Draw Specific (Directional)
         h_gc = features['h_roll_goals_against']
         a_gc = features['a_roll_goals_against']
         h_gs = features['h_roll_goals_for']
@@ -312,10 +315,12 @@ def predict_simple():
         h_xg = features['h_roll_xg_for']
         a_xg = features['a_roll_xg_for']
 
-        features['def_similarity'] = 1.0 / (1.0 + abs(h_gc - a_gc))
-        features['off_similarity'] = 1.0 / (1.0 + abs(h_gs - a_gs))
-        features['xg_convergence'] = 1.0 / (1.0 + abs(h_xg - a_xg))
-        features['goal_balance'] = 1.0 / (1.0 + abs(h_gs - h_gc) + abs(a_gs - a_gc))
+        features['h_att_v_a_def'] = h_gs - a_gc
+        features['a_att_v_h_def'] = a_gs - h_gc
+        features['rel_att_v_def'] = features['h_att_v_a_def'] - features['a_att_v_h_def']
+        features['xg_matchup_h'] = h_xg - away.get('avg_xg_conceded', 1.5)
+        features['xg_matchup_a'] = a_xg - home.get('avg_xg_conceded', 1.5)
+        features['goal_balance'] = (h_gs - h_gc) - (a_gs - a_gc)
         features['h2h_draw_rate'] = features.get('h2h_draws', 0.33)
 
         # Predict
