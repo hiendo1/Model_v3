@@ -104,18 +104,68 @@ def predict():
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
+import difflib
+
+def get_team_data(query, league, team_db):
+    """
+    Finds best team record in DB.
+    1. Exact Match: "Team|League"
+    2. Exact Name Match (if league unknown or missing)
+    3. Case-insensitive Name Match
+    4. Fuzzy Match
+    """
+    # 1. Exact Match (Best case)
+    exact_key = f"{query}|{league}"
+    if exact_key in team_db:
+        return team_db[exact_key], query
+    
+    # 2. Name search - try to find if team exists in the requested league
+    # Or just find the team in ANY league
+    keys = list(team_db.keys())
+    
+    # 3. Fuzzy search for the name part
+    team_names = list(set([k.split('|')[0] for k in keys]))
+    
+    # Try exact name first
+    if query in team_names:
+        matched_name = query
+    else:
+        # Case insensitive
+        lower_names = {n.lower(): n for n in team_names}
+        if query.lower() in lower_names:
+            matched_name = lower_names[query.lower()]
+        else:
+            # Fuzzy
+            matches = difflib.get_close_matches(query, team_names, n=1, cutoff=0.6)
+            if not matches:
+                return None, None
+            matched_name = matches[0]
+            
+    # Now we have a name, try to find it in the requested league
+    final_key = f"{matched_name}|{league}"
+    if final_key not in team_db:
+        # Fallback to the first available league for this team
+        possibilities = [k for k in keys if k.startswith(f"{matched_name}|")]
+        if not possibilities:
+            return None, None
+        final_key = possibilities[0]
+        
+    return team_db[final_key], matched_name
+
 @app.route('/predict-by-name', methods=['POST'])
 def predict_by_name():
     """
     Production-ready endpoint for Frontend (v4).
-    Input: {"home_name": "Arsenal FC", "away_name": "Liverpool FC", "match_date": "2024-05-19"}
+    Input: {"home_name": "Arsenal", "away_name": "Liverpool", "league": "Premier League", "match_date": "2024-05-19"}
     """
     try:
         data = request.get_json()
-        h_name = data.get('home_name')
-        a_name = data.get('away_name')
+        h_query = data.get('home_name')
+        a_query = data.get('away_name')
+        league = data.get('league', 'Unknown')
         match_date = data.get('match_date')
-        if not h_name or not a_name:
+        
+        if not h_query or not a_query:
             return jsonify({'error': 'Please provide home_name and away_name'}), 400
 
         if not stats_lookup:
@@ -124,13 +174,20 @@ def predict_by_name():
         team_db = stats_lookup.get('team_stats', {})
         h2h_db = stats_lookup.get('h2h_stats', {})
 
-        if h_name not in team_db or a_name not in team_db:
-            return jsonify({'error': f'One or both teams not found in database.'}), 404
+        h_stats, h_name = get_team_data(h_query, league, team_db)
+        a_stats, a_name = get_team_data(a_query, league, team_db)
 
-        h_stats = team_db[h_name]
-        a_stats = team_db[a_name]
+        if not h_stats or not a_stats:
+            return jsonify({
+                'error': f'Team(s) not found.',
+                'details': {
+                    'home_searched': h_query, 'home_found': h_name,
+                    'away_searched': a_query, 'away_found': a_name
+                }
+            }), 404
 
         # 1. Start with H2H
+        # Note: H2H is stored as "Team H|Team A"
         h2h = h2h_db.get(f"{h_name}|{a_name}")
         if not h2h:
             rev = h2h_db.get(f"{a_name}|{h_name}")
@@ -206,7 +263,10 @@ def predict_by_name():
 @app.route('/teams')
 def get_teams():
     if not stats_lookup: return jsonify([])
-    return jsonify(sorted(list(stats_lookup.get('team_stats', {}).keys())))
+    team_db = stats_lookup.get('team_stats', {})
+    # Return unique team names without the |League suffix
+    names = sorted(list(set([k.split('|')[0] for k in team_db.keys()])))
+    return jsonify(names)
 
 @app.route('/teams-by-league')
 def get_teams_by_league():
@@ -214,11 +274,13 @@ def get_teams_by_league():
     team_db = stats_lookup.get('team_stats', {})
     
     leagues = {}
-    for team, stats in team_db.items():
+    for key, stats in team_db.items():
         league = stats.get('league', 'Unknown')
+        team_name = stats.get('team_name', key.split('|')[0])
         if league not in leagues:
             leagues[league] = []
-        leagues[league].append(team)
+        if team_name not in leagues[league]:
+            leagues[league].append(team_name)
         
     # Sort teams within each league
     for l in leagues:

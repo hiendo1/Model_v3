@@ -421,6 +421,7 @@
 
         // 2. Make Prediction Call
         async function makePrediction() {
+            const league = document.getElementById('leagueSelect').value;
             const home = document.getElementById('homeTeam').value;
             const away = document.getElementById('awayTeam').value;
             const date = document.getElementById('matchDate').value;
@@ -438,6 +439,7 @@
                     body: JSON.stringify({
                         home_name: home,
                         away_name: away,
+                        league: league,
                         match_date: date
                     })
                 });
