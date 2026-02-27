@@ -41,7 +41,7 @@ print(f"[OK] Model v3 loaded. Features: {len(feature_names)}")
 print(f"  Best models: { {k: (v.get('type') if type(v) is dict else type(v).__name__) for k, v in best_models.items()} }")
 
 # --- Configuration ---
-ML_WEIGHT = 0.35  # Must match predict_gui_v3.py
+ML_WEIGHT = 0.60  # Manual weight (Optimized via Backtest)
 
 
 @app.route('/')
@@ -168,10 +168,18 @@ def predict_by_name():
         features["rel_elo"] = h_elo - a_elo
         
         curr_date = pd.to_datetime(match_date) if match_date else pd.Timestamp.now()
-        h_last = state.get("last_date", {}).get(h_name)
-        a_last = state.get("last_date", {}).get(a_name)
-        features["h_rest"] = min((curr_date - pd.to_datetime(h_last)).days if h_last else 15, 15)
-        features["a_rest"] = min((curr_date - pd.to_datetime(a_last)).days if a_last else 15, 15)
+        h_last = state.get("last_date", {}).get(h_name) or h_stats.get('last_match_date')
+        a_last = state.get("last_date", {}).get(a_name) or a_stats.get('last_match_date')
+        
+        # Calculate rest days
+        try:
+            h_rest_days = (curr_date - pd.to_datetime(h_last)).days if h_last else 15
+            a_rest_days = (curr_date - pd.to_datetime(a_last)).days if a_last else 15
+        except:
+            h_rest_days, a_rest_days = 15, 15
+
+        features["h_rest"] = min(max(h_rest_days, 0), 20)
+        features["a_rest"] = min(max(a_rest_days, 0), 20)
         
         features["h_venue_roll_goals"] = h_stats.get("venue_roll_goals", h_stats.get("roll_goals_for", 1.2))
         features["a_venue_roll_goals"] = a_stats.get("venue_roll_goals", a_stats.get("roll_goals_for", 1.2))
@@ -414,6 +422,7 @@ def predict_internal(features_dict):
     xg_a = max(0.3, xg_a)
 
     # --- DUAL GRID SCALING ---
+    # ML_WEIGHT is defined globally
     prob_matrix = np.outer(poisson.pmf(range(12), xg_h), poisson.pmf(range(12), xg_a))
 
     p_h_p = max(np.sum(np.tril(prob_matrix, -1)), 0.0001)
@@ -547,7 +556,12 @@ def predict_internal(features_dict):
         h_cap = "Draw / Level (0)"
 
     # --- Build Response ---
-    result_label = ['Away Win', 'Draw', 'Home Win'][int(np.argmax([final_a, final_d, final_h]))]
+    if final_h > final_d and final_h > final_a:
+        result_label = "Home Win"
+    elif final_a > final_h and final_a > final_d:
+        result_label = "Away Win"
+    else:
+        result_label = "Draw"
 
     return {
         'success': True,
