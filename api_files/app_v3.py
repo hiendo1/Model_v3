@@ -304,7 +304,12 @@ def get_teams_by_league():
 @app.route('/league-teams')
 def get_league_teams():
     """Returns the pre-processed filtering mapping."""
-    return jsonify(league_teams_db)
+    try:
+        with open(LEAGUE_TEAMS_PATH, 'r', encoding='utf-8') as f:
+            live_db = json.load(f)
+        return jsonify(live_db)
+    except Exception as e:
+        return jsonify(league_teams_db)
 
 @app.route('/predict-simple', methods=['POST'])
 def predict_simple():
