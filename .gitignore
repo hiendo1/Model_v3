@@ -1,9 +1,0 @@
-# Ignore everything by default
-*
-
-# Allow the .gitignore file
-!.gitignore
-
-# Explicitly allow ONLY the required API deployment folder and its contents
-!api_files/
-!api_files/**
