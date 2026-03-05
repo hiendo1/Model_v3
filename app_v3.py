@@ -37,6 +37,17 @@ if os.path.exists(STATS_PATH):
     except Exception as e:
         print(f"[ERROR] Failed to load stats lookup: {e}")
 
+# --- Load League Teams Data (For Filtering) ---
+LEAGUE_TEAMS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'league_teams.json')
+league_teams_db = {}
+if os.path.exists(LEAGUE_TEAMS_PATH):
+    try:
+        with open(LEAGUE_TEAMS_PATH, 'r', encoding='utf-8') as f:
+            league_teams_db = json.load(f)
+        print(f"[OK] League teams filter loaded: {len(league_teams_db)} leagues")
+    except Exception as e:
+        print(f"[ERROR] Failed to load league teams filter: {e}")
+
 print(f"[OK] Model v3 loaded. Features: {len(feature_names)}")
 print(f"  Best models: { {k: (v.get('type') if type(v) is dict else type(v).__name__) for k, v in best_models.items()} }")
 
@@ -55,7 +66,8 @@ def home():
             "/predict-simple": "POST - Manual stats input",
             "/health": "GET - Status check",
             "/features": "GET - Required feature list",
-            "/teams-by-league": "GET - Get all teams grouped by league"
+            "/teams-by-league": "GET - Get all teams grouped by league",
+            "/league-teams": "GET - Get mapping of league -> season -> teams"
         },
         "status": "online"
     })
@@ -288,6 +300,11 @@ def get_teams_by_league():
         leagues[l].sort()
         
     return jsonify(leagues)
+
+@app.route('/league-teams')
+def get_league_teams():
+    """Returns the pre-processed filtering mapping."""
+    return jsonify(league_teams_db)
 
 @app.route('/predict-simple', methods=['POST'])
 def predict_simple():

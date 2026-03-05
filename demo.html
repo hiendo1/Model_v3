@@ -335,7 +335,7 @@
     </div>
 
     <script>
-        let leagueData = {}; // { "Premier League": ["Arsenal", ...], ... }
+        let leagueTeamsFilter = {};
 
         function getApiBase() {
             let url = document.getElementById('apiUrl').value.trim();
@@ -345,7 +345,7 @@
             return url;
         }
 
-        // 1. Load Leagues on Startup or Connect
+        // 1. Load Leagues and Filter Data on Startup or Connect
         async function loadTeams() {
             const apiBase = getApiBase();
             const btn = document.getElementById('connectBtn');
@@ -355,17 +355,23 @@
             status.innerText = "Đang kiểm tra dữ liệu từ " + apiBase;
 
             try {
-                const res = await fetch(`${apiBase}/teams-by-league`);
-                leagueData = await res.json();
+                // Fetch the new league-season-teams mapping
+                const res = await fetch(`${apiBase}/league-teams`);
+                leagueTeamsFilter = await res.json();
 
                 const leagueSelect = document.getElementById('leagueSelect');
                 leagueSelect.innerHTML = '<option value="">-- Chọn Giải Đấu --</option>';
 
-                Object.keys(leagueData).sort().forEach(league => {
+                Object.keys(leagueTeamsFilter).sort().forEach(league => {
                     leagueSelect.innerHTML += `<option value="${league}">${league}</option>`;
                 });
 
-                leagueSelect.addEventListener('change', populateTeams);
+                leagueSelect.addEventListener('change', () => {
+                    resetDateAndTeams();
+                    document.getElementById('matchDate').disabled = !leagueSelect.value;
+                });
+
+                document.getElementById('matchDate').addEventListener('change', populateTeamsForSeason);
 
                 const homeSelect = document.getElementById('homeTeam');
                 const awaySelect = document.getElementById('awayTeam');
@@ -374,40 +380,66 @@
 
                 btn.innerText = "Connect";
                 status.style.color = "var(--success-color)";
-                status.innerText = "Đã kết nối thành công! Tải xong " + Object.keys(leagueData).length + " giải đấu.";
+                status.innerText = "Đã kết nối! Tải xong " + Object.keys(leagueTeamsFilter).length + " giải đấu.";
 
             } catch (error) {
-                console.error("Lỗi khi tải danh sách đội:", error);
+                console.error("Lỗi khi tải dữ liệu:", error);
                 document.getElementById('leagueSelect').innerHTML = '<option value="">Lỗi kết nối API!</option>';
                 btn.innerText = "Connect";
                 status.style.color = "var(--danger-color)";
-                status.innerText = "Lỗi kết nối! Đảm bảo link BE đã bật CORS và đang chạy.";
+                status.innerText = "Lỗi kết nối! Đảm bảo BE đã bật CORS và đang chạy.";
             }
         }
 
-        function populateTeams() {
+        function resetDateAndTeams() {
+            document.getElementById('matchDate').value = "";
+            document.getElementById('homeTeam').innerHTML = '<option value="">-- Chọn Đội Nhà --</option>';
+            document.getElementById('awayTeam').innerHTML = '<option value="">-- Chọn Đội Khách --</option>';
+            document.getElementById('homeTeam').disabled = true;
+            document.getElementById('awayTeam').disabled = true;
+            checkReady();
+        }
+
+        function getSeasonFromDate(dateStr) {
+            if (!dateStr) return null;
+            const date = new Date(dateStr);
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1; // 1-12
+            if (month >= 8) {
+                return `${year}-${year + 1}`;
+            } else {
+                return `${year - 1}-${year}`;
+            }
+        }
+
+        function populateTeamsForSeason() {
             const league = document.getElementById('leagueSelect').value;
+            const date = document.getElementById('matchDate').value;
             const homeSelect = document.getElementById('homeTeam');
             const awaySelect = document.getElementById('awayTeam');
+
+            if (!league || !date) {
+                resetDateAndTeams();
+                return;
+            }
+
+            const season = getSeasonFromDate(date);
+            const teams = (leagueTeamsFilter[league] || {})[season] || [];
 
             homeSelect.innerHTML = '<option value="">-- Chọn Đội Nhà --</option>';
             awaySelect.innerHTML = '<option value="">-- Chọn Đội Khách --</option>';
 
-            if (!league) {
-                homeSelect.disabled = true;
-                awaySelect.disabled = true;
-                checkReady();
-                return;
+            if (teams.length === 0) {
+                homeSelect.innerHTML = '<option value="">Không tìm thấy đội cho mùa này</option>';
+                awaySelect.innerHTML = '<option value="">Không tìm thấy đội cho mùa này</option>';
+            } else {
+                teams.forEach(team => {
+                    homeSelect.innerHTML += `<option value="${team}">${team}</option>`;
+                    awaySelect.innerHTML += `<option value="${team}">${team}</option>`;
+                });
+                homeSelect.disabled = false;
+                awaySelect.disabled = false;
             }
-
-            const teams = leagueData[league] || [];
-            teams.forEach(team => {
-                homeSelect.innerHTML += `<option value="${team}">${team}</option>`;
-                awaySelect.innerHTML += `<option value="${team}">${team}</option>`;
-            });
-
-            homeSelect.disabled = false;
-            awaySelect.disabled = false;
             checkReady();
         }
 

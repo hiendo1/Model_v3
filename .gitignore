@@ -9,6 +9,7 @@
 !latest_stats.json
 !football_model_v3.joblib
 !requirements.txt
+!league_teams.json
 !Procfile
 !runtime.txt
 !demo.html
