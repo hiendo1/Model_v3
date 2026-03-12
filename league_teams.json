@@ -1,0 +1,4210 @@
+{
+  "Premier League": {
+    "2023-2024": [
+      {
+        "name": "AFC Bournemouth",
+        "id": "sr:competitor:60"
+      },
+      {
+        "name": "Arsenal FC",
+        "id": "sr:competitor:42"
+      },
+      {
+        "name": "Aston Villa",
+        "id": "sr:competitor:40"
+      },
+      {
+        "name": "Brentford FC",
+        "id": "sr:competitor:50"
+      },
+      {
+        "name": "Brighton & Hove Albion",
+        "id": "sr:competitor:30"
+      },
+      {
+        "name": "Burnley FC",
+        "id": "sr:competitor:6"
+      },
+      {
+        "name": "Chelsea FC",
+        "id": "sr:competitor:38"
+      },
+      {
+        "name": "Crystal Palace",
+        "id": "sr:competitor:7"
+      },
+      {
+        "name": "Everton FC",
+        "id": "sr:competitor:48"
+      },
+      {
+        "name": "Fulham FC",
+        "id": "sr:competitor:43"
+      },
+      {
+        "name": "Liverpool FC",
+        "id": "sr:competitor:44"
+      },
+      {
+        "name": "Luton Town",
+        "id": "sr:competitor:72"
+      },
+      {
+        "name": "Manchester City",
+        "id": "sr:competitor:17"
+      },
+      {
+        "name": "Manchester United",
+        "id": "sr:competitor:35"
+      },
+      {
+        "name": "Newcastle United",
+        "id": "sr:competitor:39"
+      },
+      {
+        "name": "Nottingham Forest",
+        "id": "sr:competitor:14"
+      },
+      {
+        "name": "Sheffield United",
+        "id": "sr:competitor:15"
+      },
+      {
+        "name": "Tottenham Hotspur",
+        "id": "sr:competitor:33"
+      },
+      {
+        "name": "West Ham United",
+        "id": "sr:competitor:37"
+      },
+      {
+        "name": "Wolverhampton Wanderers",
+        "id": "sr:competitor:3"
+      }
+    ],
+    "2024-2025": [
+      {
+        "name": "AFC Bournemouth",
+        "id": "sr:competitor:60"
+      },
+      {
+        "name": "Arsenal FC",
+        "id": "sr:competitor:42"
+      },
+      {
+        "name": "Aston Villa",
+        "id": "sr:competitor:40"
+      },
+      {
+        "name": "Brentford FC",
+        "id": "sr:competitor:50"
+      },
+      {
+        "name": "Brighton & Hove Albion",
+        "id": "sr:competitor:30"
+      },
+      {
+        "name": "Chelsea FC",
+        "id": "sr:competitor:38"
+      },
+      {
+        "name": "Crystal Palace",
+        "id": "sr:competitor:7"
+      },
+      {
+        "name": "Everton FC",
+        "id": "sr:competitor:48"
+      },
+      {
+        "name": "Fulham FC",
+        "id": "sr:competitor:43"
+      },
+      {
+        "name": "Ipswich Town",
+        "id": "sr:competitor:32"
+      },
+      {
+        "name": "Leicester City",
+        "id": "sr:competitor:31"
+      },
+      {
+        "name": "Liverpool FC",
+        "id": "sr:competitor:44"
+      },
+      {
+        "name": "Manchester City",
+        "id": "sr:competitor:17"
+      },
+      {
+        "name": "Manchester United",
+        "id": "sr:competitor:35"
+      },
+      {
+        "name": "Newcastle United",
+        "id": "sr:competitor:39"
+      },
+      {
+        "name": "Nottingham Forest",
+        "id": "sr:competitor:14"
+      },
+      {
+        "name": "Southampton FC",
+        "id": "sr:competitor:45"
+      },
+      {
+        "name": "Tottenham Hotspur",
+        "id": "sr:competitor:33"
+      },
+      {
+        "name": "West Ham United",
+        "id": "sr:competitor:37"
+      },
+      {
+        "name": "Wolverhampton Wanderers",
+        "id": "sr:competitor:3"
+      }
+    ],
+    "2025-2026": [
+      {
+        "name": "AFC Bournemouth",
+        "id": "sr:competitor:60"
+      },
+      {
+        "name": "Arsenal FC",
+        "id": "sr:competitor:42"
+      },
+      {
+        "name": "Aston Villa",
+        "id": "sr:competitor:40"
+      },
+      {
+        "name": "Brentford FC",
+        "id": "sr:competitor:50"
+      },
+      {
+        "name": "Brighton & Hove Albion",
+        "id": "sr:competitor:30"
+      },
+      {
+        "name": "Burnley FC",
+        "id": "sr:competitor:6"
+      },
+      {
+        "name": "Chelsea FC",
+        "id": "sr:competitor:38"
+      },
+      {
+        "name": "Crystal Palace",
+        "id": "sr:competitor:7"
+      },
+      {
+        "name": "Everton FC",
+        "id": "sr:competitor:48"
+      },
+      {
+        "name": "Fulham FC",
+        "id": "sr:competitor:43"
+      },
+      {
+        "name": "Leeds United",
+        "id": "sr:competitor:34"
+      },
+      {
+        "name": "Liverpool FC",
+        "id": "sr:competitor:44"
+      },
+      {
+        "name": "Manchester City",
+        "id": "sr:competitor:17"
+      },
+      {
+        "name": "Manchester United",
+        "id": "sr:competitor:35"
+      },
+      {
+        "name": "Newcastle United",
+        "id": "sr:competitor:39"
+      },
+      {
+        "name": "Nottingham Forest",
+        "id": "sr:competitor:14"
+      },
+      {
+        "name": "Sunderland AFC",
+        "id": "sr:competitor:41"
+      },
+      {
+        "name": "Tottenham Hotspur",
+        "id": "sr:competitor:33"
+      },
+      {
+        "name": "West Ham United",
+        "id": "sr:competitor:37"
+      },
+      {
+        "name": "Wolverhampton Wanderers",
+        "id": "sr:competitor:3"
+      }
+    ]
+  },
+  "Ligue 1": {
+    "2023-2024": [
+      {
+        "name": "AS Monaco",
+        "id": "sr:competitor:1653"
+      },
+      {
+        "name": "AS Saint-Etienne",
+        "id": "sr:competitor:1678"
+      },
+      {
+        "name": "Clermont Foot 63",
+        "id": "sr:competitor:1680"
+      },
+      {
+        "name": "FC Lorient",
+        "id": "sr:competitor:1656"
+      },
+      {
+        "name": "FC Metz",
+        "id": "sr:competitor:1651"
+      },
+      {
+        "name": "FC Nantes",
+        "id": "sr:competitor:1647"
+      },
+      {
+        "name": "Le Havre AC",
+        "id": "sr:competitor:1662"
+      },
+      {
+        "name": "Lille OSC",
+        "id": "sr:competitor:1643"
+      },
+      {
+        "name": "Montpellier HSC",
+        "id": "sr:competitor:1642"
+      },
+      {
+        "name": "OGC Nice",
+        "id": "sr:competitor:1661"
+      },
+      {
+        "name": "Olympique Lyon",
+        "id": "sr:competitor:1649"
+      },
+      {
+        "name": "Olympique Marseille",
+        "id": "sr:competitor:1641"
+      },
+      {
+        "name": "Paris FC",
+        "id": "sr:competitor:6070"
+      },
+      {
+        "name": "Paris Saint-Germain",
+        "id": "sr:competitor:1644"
+      },
+      {
+        "name": "RC Lens",
+        "id": "sr:competitor:1648"
+      },
+      {
+        "name": "Racing Club De Lens",
+        "id": "sr:competitor:1648"
+      },
+      {
+        "name": "Rodez Aveyron Football",
+        "id": "sr:competitor:6925"
+      },
+      {
+        "name": "Stade Brest 29",
+        "id": "sr:competitor:1715"
+      },
+      {
+        "name": "Stade Reims",
+        "id": "sr:competitor:1682"
+      },
+      {
+        "name": "Stade Rennais FC",
+        "id": "sr:competitor:1658"
+      },
+      {
+        "name": "Stade Rennes",
+        "id": "sr:competitor:1658"
+      },
+      {
+        "name": "Strasbourg Alsace",
+        "id": "sr:competitor:1659"
+      },
+      {
+        "name": "Toulouse FC",
+        "id": "sr:competitor:1681"
+      }
+    ],
+    "2024-2025": [
+      {
+        "name": "AJ Auxerre",
+        "id": "sr:competitor:1646"
+      },
+      {
+        "name": "AS Monaco",
+        "id": "sr:competitor:1653"
+      },
+      {
+        "name": "AS Saint-Etienne",
+        "id": "sr:competitor:1678"
+      },
+      {
+        "name": "Angers SCO",
+        "id": "sr:competitor:1684"
+      },
+      {
+        "name": "EA Guingamp",
+        "id": "sr:competitor:1654"
+      },
+      {
+        "name": "FC Metz",
+        "id": "sr:competitor:1651"
+      },
+      {
+        "name": "FC Nantes",
+        "id": "sr:competitor:1647"
+      },
+      {
+        "name": "Le Havre AC",
+        "id": "sr:competitor:1662"
+      },
+      {
+        "name": "Lille OSC",
+        "id": "sr:competitor:1643"
+      },
+      {
+        "name": "Montpellier HSC",
+        "id": "sr:competitor:1642"
+      },
+      {
+        "name": "OGC Nice",
+        "id": "sr:competitor:1661"
+      },
+      {
+        "name": "Olympique Lyon",
+        "id": "sr:competitor:1649"
+      },
+      {
+        "name": "Olympique Marseille",
+        "id": "sr:competitor:1641"
+      },
+      {
+        "name": "Paris Saint-Germain",
+        "id": "sr:competitor:1644"
+      },
+      {
+        "name": "RC Lens",
+        "id": "sr:competitor:1648"
+      },
+      {
+        "name": "Racing Club De Lens",
+        "id": "sr:competitor:1648"
+      },
+      {
+        "name": "Stade Brest 29",
+        "id": "sr:competitor:1715"
+      },
+      {
+        "name": "Stade Reims",
+        "id": "sr:competitor:1682"
+      },
+      {
+        "name": "Stade Rennais FC",
+        "id": "sr:competitor:1658"
+      },
+      {
+        "name": "Strasbourg Alsace",
+        "id": "sr:competitor:1659"
+      },
+      {
+        "name": "Toulouse FC",
+        "id": "sr:competitor:1681"
+      },
+      {
+        "name": "USL Dunkerque",
+        "id": "sr:competitor:6918"
+      }
+    ],
+    "2025-2026": [
+      {
+        "name": "AJ Auxerre",
+        "id": "sr:competitor:1646"
+      },
+      {
+        "name": "AS Monaco",
+        "id": "sr:competitor:1653"
+      },
+      {
+        "name": "Angers SCO",
+        "id": "sr:competitor:1684"
+      },
+      {
+        "name": "FC Lorient",
+        "id": "sr:competitor:1656"
+      },
+      {
+        "name": "FC Metz",
+        "id": "sr:competitor:1651"
+      },
+      {
+        "name": "FC Nantes",
+        "id": "sr:competitor:1647"
+      },
+      {
+        "name": "Le Havre AC",
+        "id": "sr:competitor:1662"
+      },
+      {
+        "name": "Lille OSC",
+        "id": "sr:competitor:1643"
+      },
+      {
+        "name": "OGC Nice",
+        "id": "sr:competitor:1661"
+      },
+      {
+        "name": "Olympique Lyon",
+        "id": "sr:competitor:1649"
+      },
+      {
+        "name": "Olympique Marseille",
+        "id": "sr:competitor:1641"
+      },
+      {
+        "name": "Paris FC",
+        "id": "sr:competitor:6070"
+      },
+      {
+        "name": "Paris Saint-Germain",
+        "id": "sr:competitor:1644"
+      },
+      {
+        "name": "Racing Club De Lens",
+        "id": "sr:competitor:1648"
+      },
+      {
+        "name": "Stade Brest 29",
+        "id": "sr:competitor:1715"
+      },
+      {
+        "name": "Stade Rennais FC",
+        "id": "sr:competitor:1658"
+      },
+      {
+        "name": "Strasbourg Alsace",
+        "id": "sr:competitor:1659"
+      },
+      {
+        "name": "Toulouse FC",
+        "id": "sr:competitor:1681"
+      }
+    ]
+  },
+  "LaLiga": {
+    "2023-2024": [
+      {
+        "name": "Athletic Bilbao",
+        "id": "sr:competitor:2825"
+      },
+      {
+        "name": "Atletico Madrid",
+        "id": "sr:competitor:2836"
+      },
+      {
+        "name": "CA Osasuna",
+        "id": "sr:competitor:2820"
+      },
+      {
+        "name": "Cadiz CF",
+        "id": "sr:competitor:4488"
+      },
+      {
+        "name": "Deportivo Alaves",
+        "id": "sr:competitor:2885"
+      },
+      {
+        "name": "FC Barcelona",
+        "id": "sr:competitor:2817"
+      },
+      {
+        "name": "Getafe CF",
+        "id": "sr:competitor:2859"
+      },
+      {
+        "name": "Girona FC",
+        "id": "sr:competitor:24264"
+      },
+      {
+        "name": "Granada CF",
+        "id": "sr:competitor:33779"
+      },
+      {
+        "name": "RC Celta de Vigo",
+        "id": "sr:competitor:2821"
+      },
+      {
+        "name": "RCD Mallorca",
+        "id": "sr:competitor:2826"
+      },
+      {
+        "name": "Rayo Vallecano",
+        "id": "sr:competitor:2818"
+      },
+      {
+        "name": "Real Betis Seville",
+        "id": "sr:competitor:2816"
+      },
+      {
+        "name": "Real Madrid",
+        "id": "sr:competitor:2829"
+      },
+      {
+        "name": "Real Sociedad San Sebastian",
+        "id": "sr:competitor:2824"
+      },
+      {
+        "name": "Sevilla FC",
+        "id": "sr:competitor:2833"
+      },
+      {
+        "name": "UD Almeria",
+        "id": "sr:competitor:2858"
+      },
+      {
+        "name": "UD Las Palmas",
+        "id": "sr:competitor:6577"
+      },
+      {
+        "name": "Valencia CF",
+        "id": "sr:competitor:2828"
+      },
+      {
+        "name": "Villarreal CF",
+        "id": "sr:competitor:2819"
+      }
+    ],
+    "2024-2025": [
+      {
+        "name": "Athletic Bilbao",
+        "id": "sr:competitor:2825"
+      },
+      {
+        "name": "Atletico Madrid",
+        "id": "sr:competitor:2836"
+      },
+      {
+        "name": "CA Osasuna",
+        "id": "sr:competitor:2820"
+      },
+      {
+        "name": "CD Leganes",
+        "id": "sr:competitor:2845"
+      },
+      {
+        "name": "Deportivo Alaves",
+        "id": "sr:competitor:2885"
+      },
+      {
+        "name": "Espanyol Barcelona",
+        "id": "sr:competitor:2814"
+      },
+      {
+        "name": "FC Barcelona",
+        "id": "sr:competitor:2817"
+      },
+      {
+        "name": "Getafe CF",
+        "id": "sr:competitor:2859"
+      },
+      {
+        "name": "Girona FC",
+        "id": "sr:competitor:24264"
+      },
+      {
+        "name": "RC Celta de Vigo",
+        "id": "sr:competitor:2821"
+      },
+      {
+        "name": "RCD Mallorca",
+        "id": "sr:competitor:2826"
+      },
+      {
+        "name": "Rayo Vallecano",
+        "id": "sr:competitor:2818"
+      },
+      {
+        "name": "Real Betis Seville",
+        "id": "sr:competitor:2816"
+      },
+      {
+        "name": "Real Madrid",
+        "id": "sr:competitor:2829"
+      },
+      {
+        "name": "Real Sociedad San Sebastian",
+        "id": "sr:competitor:2824"
+      },
+      {
+        "name": "Real Valladolid",
+        "id": "sr:competitor:2831"
+      },
+      {
+        "name": "Sevilla FC",
+        "id": "sr:competitor:2833"
+      },
+      {
+        "name": "UD Las Palmas",
+        "id": "sr:competitor:6577"
+      },
+      {
+        "name": "Valencia CF",
+        "id": "sr:competitor:2828"
+      },
+      {
+        "name": "Villarreal CF",
+        "id": "sr:competitor:2819"
+      }
+    ],
+    "2025-2026": [
+      {
+        "name": "Athletic Bilbao",
+        "id": "sr:competitor:2825"
+      },
+      {
+        "name": "Atletico Madrid",
+        "id": "sr:competitor:2836"
+      },
+      {
+        "name": "CA Osasuna",
+        "id": "sr:competitor:2820"
+      },
+      {
+        "name": "Deportivo Alaves",
+        "id": "sr:competitor:2885"
+      },
+      {
+        "name": "Elche CF",
+        "id": "sr:competitor:2846"
+      },
+      {
+        "name": "Espanyol Barcelona",
+        "id": "sr:competitor:2814"
+      },
+      {
+        "name": "FC Barcelona",
+        "id": "sr:competitor:2817"
+      },
+      {
+        "name": "Getafe CF",
+        "id": "sr:competitor:2859"
+      },
+      {
+        "name": "Girona FC",
+        "id": "sr:competitor:24264"
+      },
+      {
+        "name": "Levante UD",
+        "id": "sr:competitor:2849"
+      },
+      {
+        "name": "RC Celta de Vigo",
+        "id": "sr:competitor:2821"
+      },
+      {
+        "name": "RCD Mallorca",
+        "id": "sr:competitor:2826"
+      },
+      {
+        "name": "Rayo Vallecano",
+        "id": "sr:competitor:2818"
+      },
+      {
+        "name": "Real Betis Seville",
+        "id": "sr:competitor:2816"
+      },
+      {
+        "name": "Real Madrid",
+        "id": "sr:competitor:2829"
+      },
+      {
+        "name": "Real Oviedo",
+        "id": "sr:competitor:2851"
+      },
+      {
+        "name": "Real Sociedad San Sebastian",
+        "id": "sr:competitor:2824"
+      },
+      {
+        "name": "Sevilla FC",
+        "id": "sr:competitor:2833"
+      },
+      {
+        "name": "Valencia CF",
+        "id": "sr:competitor:2828"
+      },
+      {
+        "name": "Villarreal CF",
+        "id": "sr:competitor:2819"
+      }
+    ]
+  },
+  "Serie A": {
+    "2023-2024": [
+      {
+        "name": "AC Milan",
+        "id": "sr:competitor:2692"
+      },
+      {
+        "name": "AC Monza",
+        "id": "sr:competitor:2729"
+      },
+      {
+        "name": "ACF Fiorentina",
+        "id": "sr:competitor:2693"
+      },
+      {
+        "name": "AS Roma",
+        "id": "sr:competitor:2702"
+      },
+      {
+        "name": "Atalanta BC",
+        "id": "sr:competitor:2686"
+      },
+      {
+        "name": "Bologna FC",
+        "id": "sr:competitor:2685"
+      },
+      {
+        "name": "Cagliari Calcio",
+        "id": "sr:competitor:2719"
+      },
+      {
+        "name": "Empoli FC",
+        "id": "sr:competitor:2705"
+      },
+      {
+        "name": "Frosinone Calcio",
+        "id": "sr:competitor:2801"
+      },
+      {
+        "name": "Genoa CFC",
+        "id": "sr:competitor:2713"
+      },
+      {
+        "name": "Hellas Verona",
+        "id": "sr:competitor:2701"
+      },
+      {
+        "name": "Inter Milano",
+        "id": "sr:competitor:2697"
+      },
+      {
+        "name": "Juventus Turin",
+        "id": "sr:competitor:2687"
+      },
+      {
+        "name": "Lazio Rome",
+        "id": "sr:competitor:2699"
+      },
+      {
+        "name": "SSC Napoli",
+        "id": "sr:competitor:2714"
+      },
+      {
+        "name": "Sassuolo Calcio",
+        "id": "sr:competitor:2793"
+      },
+      {
+        "name": "Torino FC",
+        "id": "sr:competitor:2696"
+      },
+      {
+        "name": "US Lecce",
+        "id": "sr:competitor:2689"
+      },
+      {
+        "name": "US Salernitana",
+        "id": "sr:competitor:2710"
+      },
+      {
+        "name": "Udinese Calcio",
+        "id": "sr:competitor:2695"
+      }
+    ],
+    "2024-2025": [
+      {
+        "name": "AC Milan",
+        "id": "sr:competitor:2692"
+      },
+      {
+        "name": "AC Monza",
+        "id": "sr:competitor:2729"
+      },
+      {
+        "name": "ACF Fiorentina",
+        "id": "sr:competitor:2693"
+      },
+      {
+        "name": "AS Roma",
+        "id": "sr:competitor:2702"
+      },
+      {
+        "name": "Atalanta BC",
+        "id": "sr:competitor:2686"
+      },
+      {
+        "name": "Bologna FC",
+        "id": "sr:competitor:2685"
+      },
+      {
+        "name": "Cagliari Calcio",
+        "id": "sr:competitor:2719"
+      },
+      {
+        "name": "Como 1907",
+        "id": "sr:competitor:2704"
+      },
+      {
+        "name": "Empoli FC",
+        "id": "sr:competitor:2705"
+      },
+      {
+        "name": "Genoa CFC",
+        "id": "sr:competitor:2713"
+      },
+      {
+        "name": "Hellas Verona",
+        "id": "sr:competitor:2701"
+      },
+      {
+        "name": "Inter Milano",
+        "id": "sr:competitor:2697"
+      },
+      {
+        "name": "Juventus Turin",
+        "id": "sr:competitor:2687"
+      },
+      {
+        "name": "Lazio Rome",
+        "id": "sr:competitor:2699"
+      },
+      {
+        "name": "Parma Calcio",
+        "id": "sr:competitor:2690"
+      },
+      {
+        "name": "SSC Napoli",
+        "id": "sr:competitor:2714"
+      },
+      {
+        "name": "Torino FC",
+        "id": "sr:competitor:2696"
+      },
+      {
+        "name": "US Lecce",
+        "id": "sr:competitor:2689"
+      },
+      {
+        "name": "Udinese Calcio",
+        "id": "sr:competitor:2695"
+      },
+      {
+        "name": "Venezia FC",
+        "id": "sr:competitor:2688"
+      }
+    ],
+    "2025-2026": [
+      {
+        "name": "AC Milan",
+        "id": "sr:competitor:2692"
+      },
+      {
+        "name": "ACF Fiorentina",
+        "id": "sr:competitor:2693"
+      },
+      {
+        "name": "AS Roma",
+        "id": "sr:competitor:2702"
+      },
+      {
+        "name": "Atalanta BC",
+        "id": "sr:competitor:2686"
+      },
+      {
+        "name": "Bologna FC",
+        "id": "sr:competitor:2685"
+      },
+      {
+        "name": "Cagliari Calcio",
+        "id": "sr:competitor:2719"
+      },
+      {
+        "name": "Como 1907",
+        "id": "sr:competitor:2704"
+      },
+      {
+        "name": "Genoa CFC",
+        "id": "sr:competitor:2713"
+      },
+      {
+        "name": "Hellas Verona",
+        "id": "sr:competitor:2701"
+      },
+      {
+        "name": "Inter Milano",
+        "id": "sr:competitor:2697"
+      },
+      {
+        "name": "Juventus Turin",
+        "id": "sr:competitor:2687"
+      },
+      {
+        "name": "Lazio Rome",
+        "id": "sr:competitor:2699"
+      },
+      {
+        "name": "Parma Calcio",
+        "id": "sr:competitor:2690"
+      },
+      {
+        "name": "Pisa SC",
+        "id": "sr:competitor:2737"
+      },
+      {
+        "name": "SSC Napoli",
+        "id": "sr:competitor:2714"
+      },
+      {
+        "name": "Sassuolo Calcio",
+        "id": "sr:competitor:2793"
+      },
+      {
+        "name": "Torino FC",
+        "id": "sr:competitor:2696"
+      },
+      {
+        "name": "US Cremonese",
+        "id": "sr:competitor:2761"
+      },
+      {
+        "name": "US Lecce",
+        "id": "sr:competitor:2689"
+      },
+      {
+        "name": "Udinese Calcio",
+        "id": "sr:competitor:2695"
+      }
+    ]
+  },
+  "Liga Portugal": {
+    "2023-2024": [
+      {
+        "name": "AVS Futebol SAD",
+        "id": "sr:competitor:1031053"
+      },
+      {
+        "name": "Boavista Porto",
+        "id": "sr:competitor:2995"
+      },
+      {
+        "name": "Casa Pia Lisbon",
+        "id": "sr:competitor:36365"
+      },
+      {
+        "name": "Estoril Praia",
+        "id": "sr:competitor:4500"
+      },
+      {
+        "name": "Estrela Amadora",
+        "id": "sr:competitor:744135"
+      },
+      {
+        "name": "FC Arouca",
+        "id": "sr:competitor:25777"
+      },
+      {
+        "name": "FC Famalicao",
+        "id": "sr:competitor:49531"
+      },
+      {
+        "name": "FC Porto",
+        "id": "sr:competitor:3002"
+      },
+      {
+        "name": "FC Vizela",
+        "id": "sr:competitor:5136"
+      },
+      {
+        "name": "GD Chaves",
+        "id": "sr:competitor:3025"
+      },
+      {
+        "name": "Gil Vicente Barcelos",
+        "id": "sr:competitor:3010"
+      },
+      {
+        "name": "Moreirense FC",
+        "id": "sr:competitor:3014"
+      },
+      {
+        "name": "Portimonense SAD",
+        "id": "sr:competitor:3026"
+      },
+      {
+        "name": "Portimonense SC",
+        "id": "sr:competitor:3026"
+      },
+      {
+        "name": "Rio Ave FC",
+        "id": "sr:competitor:3036"
+      },
+      {
+        "name": "SC Braga",
+        "id": "sr:competitor:2999"
+      },
+      {
+        "name": "SC Farense",
+        "id": "sr:competitor:2998"
+      },
+      {
+        "name": "SL Benfica",
+        "id": "sr:competitor:3006"
+      },
+      {
+        "name": "Sporting CP",
+        "id": "sr:competitor:3001"
+      },
+      {
+        "name": "Sporting Lisbon",
+        "id": "sr:competitor:3001"
+      },
+      {
+        "name": "Vitoria SC Guimaraes",
+        "id": "sr:competitor:3009"
+      }
+    ],
+    "2024-2025": [
+      {
+        "name": "AVS Futebol SAD",
+        "id": "sr:competitor:1031053"
+      },
+      {
+        "name": "Boavista Porto",
+        "id": "sr:competitor:2995"
+      },
+      {
+        "name": "Casa Pia Lisbon",
+        "id": "sr:competitor:36365"
+      },
+      {
+        "name": "Estoril Praia",
+        "id": "sr:competitor:4500"
+      },
+      {
+        "name": "Estrela Amadora",
+        "id": "sr:competitor:744135"
+      },
+      {
+        "name": "FC Arouca",
+        "id": "sr:competitor:25777"
+      },
+      {
+        "name": "FC Famalicao",
+        "id": "sr:competitor:49531"
+      },
+      {
+        "name": "FC Porto",
+        "id": "sr:competitor:3002"
+      },
+      {
+        "name": "FC Vizela",
+        "id": "sr:competitor:5136"
+      },
+      {
+        "name": "Gil Vicente Barcelos",
+        "id": "sr:competitor:3010"
+      },
+      {
+        "name": "Moreirense FC",
+        "id": "sr:competitor:3014"
+      },
+      {
+        "name": "Nacional da Madeira",
+        "id": "sr:competitor:3013"
+      },
+      {
+        "name": "Rio Ave FC",
+        "id": "sr:competitor:3036"
+      },
+      {
+        "name": "SC Braga",
+        "id": "sr:competitor:2999"
+      },
+      {
+        "name": "SC Farense",
+        "id": "sr:competitor:2998"
+      },
+      {
+        "name": "SL Benfica",
+        "id": "sr:competitor:3006"
+      },
+      {
+        "name": "Santa Clara Azores",
+        "id": "sr:competitor:3011"
+      },
+      {
+        "name": "Sporting CP",
+        "id": "sr:competitor:3001"
+      },
+      {
+        "name": "Vitoria SC Guimaraes",
+        "id": "sr:competitor:3009"
+      }
+    ],
+    "2025-2026": [
+      {
+        "name": "AVS Futebol SAD",
+        "id": "sr:competitor:1031053"
+      },
+      {
+        "name": "CD Tondela",
+        "id": "sr:competitor:38396"
+      },
+      {
+        "name": "Casa Pia Lisbon",
+        "id": "sr:competitor:36365"
+      },
+      {
+        "name": "Estoril Praia",
+        "id": "sr:competitor:4500"
+      },
+      {
+        "name": "Estrela Amadora",
+        "id": "sr:competitor:744135"
+      },
+      {
+        "name": "FC Alverca SAD",
+        "id": "sr:competitor:3012"
+      },
+      {
+        "name": "FC Arouca",
+        "id": "sr:competitor:25777"
+      },
+      {
+        "name": "FC Famalicao",
+        "id": "sr:competitor:49531"
+      },
+      {
+        "name": "FC Porto",
+        "id": "sr:competitor:3002"
+      },
+      {
+        "name": "Gil Vicente Barcelos",
+        "id": "sr:competitor:3010"
+      },
+      {
+        "name": "Moreirense FC",
+        "id": "sr:competitor:3014"
+      },
+      {
+        "name": "Nacional da Madeira",
+        "id": "sr:competitor:3013"
+      },
+      {
+        "name": "Rio Ave FC",
+        "id": "sr:competitor:3036"
+      },
+      {
+        "name": "SC Braga",
+        "id": "sr:competitor:2999"
+      },
+      {
+        "name": "SL Benfica",
+        "id": "sr:competitor:3006"
+      },
+      {
+        "name": "Santa Clara Azores",
+        "id": "sr:competitor:3011"
+      },
+      {
+        "name": "Sporting CP",
+        "id": "sr:competitor:3001"
+      },
+      {
+        "name": "Vitoria SC Guimaraes",
+        "id": "sr:competitor:3009"
+      }
+    ]
+  },
+  "Eredivisie": {
+    "2023-2024": [
+      {
+        "name": "ADO Den Haag",
+        "id": "sr:competitor:2966"
+      },
+      {
+        "name": "AZ Alkmaar",
+        "id": "sr:competitor:2950"
+      },
+      {
+        "name": "Ajax Amsterdam",
+        "id": "sr:competitor:2953"
+      },
+      {
+        "name": "Almere City FC",
+        "id": "sr:competitor:2990"
+      },
+      {
+        "name": "De Graafschap",
+        "id": "sr:competitor:2949"
+      },
+      {
+        "name": "Excelsior Rotterdam",
+        "id": "sr:competitor:2967"
+      },
+      {
+        "name": "FC Dordrecht",
+        "id": "sr:competitor:2973"
+      },
+      {
+        "name": "FC Emmen",
+        "id": "sr:competitor:2965"
+      },
+      {
+        "name": "FC Twente Enschede",
+        "id": "sr:competitor:2955"
+      },
+      {
+        "name": "FC Utrecht",
+        "id": "sr:competitor:2948"
+      },
+      {
+        "name": "FC Volendam",
+        "id": "sr:competitor:2968"
+      },
+      {
+        "name": "Feyenoord Rotterdam",
+        "id": "sr:competitor:2959"
+      },
+      {
+        "name": "Fortuna Sittard",
+        "id": "sr:competitor:2957"
+      },
+      {
+        "name": "Go Ahead Eagles",
+        "id": "sr:competitor:2979"
+      },
+      {
+        "name": "Heracles Almelo",
+        "id": "sr:competitor:2977"
+      },
+      {
+        "name": "NAC Breda",
+        "id": "sr:competitor:2947"
+      },
+      {
+        "name": "NEC Nijmegen",
+        "id": "sr:competitor:2962"
+      },
+      {
+        "name": "PEC Zwolle",
+        "id": "sr:competitor:2971"
+      },
+      {
+        "name": "PSV Eindhoven",
+        "id": "sr:competitor:2952"
+      },
+      {
+        "name": "RKC Waalwijk",
+        "id": "sr:competitor:2956"
+      },
+      {
+        "name": "Roda JC Kerkrade",
+        "id": "sr:competitor:2954"
+      },
+      {
+        "name": "SC Heerenveen",
+        "id": "sr:competitor:2964"
+      },
+      {
+        "name": "Sparta Rotterdam",
+        "id": "sr:competitor:2960"
+      },
+      {
+        "name": "Vitesse Arnhem",
+        "id": "sr:competitor:2958"
+      }
+    ],
+    "2024-2025": [
+      {
+        "name": "ADO Den Haag",
+        "id": "sr:competitor:2966"
+      },
+      {
+        "name": "AZ Alkmaar",
+        "id": "sr:competitor:2950"
+      },
+      {
+        "name": "Ajax Amsterdam",
+        "id": "sr:competitor:2953"
+      },
+      {
+        "name": "Almere City FC",
+        "id": "sr:competitor:2990"
+      },
+      {
+        "name": "De Graafschap",
+        "id": "sr:competitor:2949"
+      },
+      {
+        "name": "FC Den Bosch",
+        "id": "sr:competitor:2963"
+      },
+      {
+        "name": "FC Dordrecht",
+        "id": "sr:competitor:2973"
+      },
+      {
+        "name": "FC Groningen",
+        "id": "sr:competitor:2951"
+      },
+      {
+        "name": "FC Twente Enschede",
+        "id": "sr:competitor:2955"
+      },
+      {
+        "name": "FC Utrecht",
+        "id": "sr:competitor:2948"
+      },
+      {
+        "name": "Feyenoord Rotterdam",
+        "id": "sr:competitor:2959"
+      },
+      {
+        "name": "Fortuna Sittard",
+        "id": "sr:competitor:2957"
+      },
+      {
+        "name": "Go Ahead Eagles",
+        "id": "sr:competitor:2979"
+      },
+      {
+        "name": "Heracles Almelo",
+        "id": "sr:competitor:2977"
+      },
+      {
+        "name": "NAC Breda",
+        "id": "sr:competitor:2947"
+      },
+      {
+        "name": "NEC Nijmegen",
+        "id": "sr:competitor:2962"
+      },
+      {
+        "name": "PEC Zwolle",
+        "id": "sr:competitor:2971"
+      },
+      {
+        "name": "PSV Eindhoven",
+        "id": "sr:competitor:2952"
+      },
+      {
+        "name": "RKC Waalwijk",
+        "id": "sr:competitor:2956"
+      },
+      {
+        "name": "SC Cambuur",
+        "id": "sr:competitor:2970"
+      },
+      {
+        "name": "SC Heerenveen",
+        "id": "sr:competitor:2964"
+      },
+      {
+        "name": "SC Telstar",
+        "id": "sr:competitor:2972"
+      },
+      {
+        "name": "Sparta Rotterdam",
+        "id": "sr:competitor:2960"
+      },
+      {
+        "name": "Willem II Tilburg",
+        "id": "sr:competitor:2961"
+      }
+    ],
+    "2025-2026": [
+      {
+        "name": "AZ Alkmaar",
+        "id": "sr:competitor:2950"
+      },
+      {
+        "name": "Ajax Amsterdam",
+        "id": "sr:competitor:2953"
+      },
+      {
+        "name": "Excelsior Rotterdam",
+        "id": "sr:competitor:2967"
+      },
+      {
+        "name": "FC Groningen",
+        "id": "sr:competitor:2951"
+      },
+      {
+        "name": "FC Twente Enschede",
+        "id": "sr:competitor:2955"
+      },
+      {
+        "name": "FC Utrecht",
+        "id": "sr:competitor:2948"
+      },
+      {
+        "name": "FC Volendam",
+        "id": "sr:competitor:2968"
+      },
+      {
+        "name": "Feyenoord Rotterdam",
+        "id": "sr:competitor:2959"
+      },
+      {
+        "name": "Fortuna Sittard",
+        "id": "sr:competitor:2957"
+      },
+      {
+        "name": "Go Ahead Eagles",
+        "id": "sr:competitor:2979"
+      },
+      {
+        "name": "Heracles Almelo",
+        "id": "sr:competitor:2977"
+      },
+      {
+        "name": "NAC Breda",
+        "id": "sr:competitor:2947"
+      },
+      {
+        "name": "NEC Nijmegen",
+        "id": "sr:competitor:2962"
+      },
+      {
+        "name": "PEC Zwolle",
+        "id": "sr:competitor:2971"
+      },
+      {
+        "name": "PSV Eindhoven",
+        "id": "sr:competitor:2952"
+      },
+      {
+        "name": "SC Heerenveen",
+        "id": "sr:competitor:2964"
+      },
+      {
+        "name": "SC Telstar",
+        "id": "sr:competitor:2972"
+      },
+      {
+        "name": "Sparta Rotterdam",
+        "id": "sr:competitor:2960"
+      }
+    ]
+  },
+  "A-League": {
+    "2025-2026": [
+      {
+        "name": "Adelaide United FC",
+        "id": "sr:competitor:2946"
+      },
+      {
+        "name": "Auckland FC",
+        "id": "sr:competitor:1156423"
+      },
+      {
+        "name": "Brisbane Roar FC",
+        "id": "sr:competitor:5968"
+      },
+      {
+        "name": "Central Coast Mariners",
+        "id": "sr:competitor:5966"
+      },
+      {
+        "name": "Macarthur FC",
+        "id": "sr:competitor:744369"
+      },
+      {
+        "name": "Melbourne City FC",
+        "id": "sr:competitor:42210"
+      },
+      {
+        "name": "Melbourne Victory",
+        "id": "sr:competitor:5970"
+      },
+      {
+        "name": "Newcastle United Jets",
+        "id": "sr:competitor:2934"
+      },
+      {
+        "name": "Perth Glory FC",
+        "id": "sr:competitor:2945"
+      },
+      {
+        "name": "Sydney FC",
+        "id": "sr:competitor:5971"
+      },
+      {
+        "name": "Wellington Phoenix FC",
+        "id": "sr:competitor:7568"
+      },
+      {
+        "name": "Western Sydney Wanderers",
+        "id": "sr:competitor:72926"
+      }
+    ]
+  },
+  "Superliga": {
+    "2025-2026": [
+      {
+        "name": "1. FC Tatran Presov",
+        "id": "sr:competitor:2403"
+      },
+      {
+        "name": "ACS Champions FC Arges",
+        "id": "sr:competitor:116221"
+      },
+      {
+        "name": "AFC Hermannstadt",
+        "id": "sr:competitor:342922"
+      },
+      {
+        "name": "AFK Csikszereda Miercurea Ciuc",
+        "id": "sr:competitor:391688"
+      },
+      {
+        "name": "AGF Aarhus",
+        "id": "sr:competitor:1291"
+      },
+      {
+        "name": "AS Trencin",
+        "id": "sr:competitor:2398"
+      },
+      {
+        "name": "ASC Otelul Galati",
+        "id": "sr:competitor:3291"
+      },
+      {
+        "name": "Broendby IF",
+        "id": "sr:competitor:1281"
+      },
+      {
+        "name": "CD Junior FC",
+        "id": "sr:competitor:6105"
+      },
+      {
+        "name": "CS Universitatea Craiova",
+        "id": "sr:competitor:116223"
+      },
+      {
+        "name": "DAC 1904 Dunajska Streda",
+        "id": "sr:competitor:23833"
+      },
+      {
+        "name": "FC Botosani",
+        "id": "sr:competitor:24798"
+      },
+      {
+        "name": "FC CFR 1907 Cluj",
+        "id": "sr:competitor:5287"
+      },
+      {
+        "name": "FC Copenhagen",
+        "id": "sr:competitor:1284"
+      },
+      {
+        "name": "FC Dinamo Bucuresti 1948",
+        "id": "sr:competitor:3292"
+      },
+      {
+        "name": "FC Farul Constanta",
+        "id": "sr:competitor:3294"
+      },
+      {
+        "name": "FC Fredericia",
+        "id": "sr:competitor:1302"
+      },
+      {
+        "name": "FC Midtjylland",
+        "id": "sr:competitor:1289"
+      },
+      {
+        "name": "FC Nordsjaelland",
+        "id": "sr:competitor:1292"
+      },
+      {
+        "name": "FC Petrolul Ploiesti",
+        "id": "sr:competitor:25856"
+      },
+      {
+        "name": "FC Spartak Trnava",
+        "id": "sr:competitor:2406"
+      },
+      {
+        "name": "FC Unirea 2004 Slobozia",
+        "id": "sr:competitor:44259"
+      },
+      {
+        "name": "FC Universitatea Cluj",
+        "id": "sr:competitor:7734"
+      },
+      {
+        "name": "FC Uta Arad",
+        "id": "sr:competitor:221210"
+      },
+      {
+        "name": "FK Crvena Zvezda Belgrade",
+        "id": "sr:competitor:5149"
+      },
+      {
+        "name": "FK Cukaricki Belgrade",
+        "id": "sr:competitor:5148"
+      },
+      {
+        "name": "FK IMT Novi Beograd",
+        "id": "sr:competitor:425691"
+      },
+      {
+        "name": "FK Javor Ivanjica",
+        "id": "sr:competitor:5144"
+      },
+      {
+        "name": "FK Kosice",
+        "id": "sr:competitor:168476"
+      },
+      {
+        "name": "FK Mladost Lucani",
+        "id": "sr:competitor:7771"
+      },
+      {
+        "name": "FK Napredak Krusevac",
+        "id": "sr:competitor:7674"
+      },
+      {
+        "name": "FK Novi Pazar",
+        "id": "sr:competitor:25736"
+      },
+      {
+        "name": "FK Partizan Belgrade",
+        "id": "sr:competitor:5152"
+      },
+      {
+        "name": "FK Radnicki 1923 Kragujevac",
+        "id": "sr:competitor:43981"
+      },
+      {
+        "name": "FK Radnicki Nis",
+        "id": "sr:competitor:25737"
+      },
+      {
+        "name": "FK Radnik Surdulica",
+        "id": "sr:competitor:111127"
+      },
+      {
+        "name": "FK Spartak Subotica",
+        "id": "sr:competitor:36967"
+      },
+      {
+        "name": "FK TSC Backa Topola",
+        "id": "sr:competitor:368638"
+      },
+      {
+        "name": "FK Vojvodina Novi Sad",
+        "id": "sr:competitor:5150"
+      },
+      {
+        "name": "FK Zeleziarne Podbrezova",
+        "id": "sr:competitor:7887"
+      },
+      {
+        "name": "FK Zeleznicar Pancevo",
+        "id": "sr:competitor:425695"
+      },
+      {
+        "name": "Fotbal Club FCSB",
+        "id": "sr:competitor:3301"
+      },
+      {
+        "name": "Independiente Santa Fe",
+        "id": "sr:competitor:6116"
+      },
+      {
+        "name": "KFC Komarno",
+        "id": "sr:competitor:191850"
+      },
+      {
+        "name": "MFK Ruzomberok",
+        "id": "sr:competitor:2397"
+      },
+      {
+        "name": "MFK Skalica",
+        "id": "sr:competitor:111061"
+      },
+      {
+        "name": "MFK Zemplin Michalovce",
+        "id": "sr:competitor:7885"
+      },
+      {
+        "name": "MSK Zilina",
+        "id": "sr:competitor:2402"
+      },
+      {
+        "name": "Metaloglobus Bucuresti",
+        "id": "sr:competitor:79081"
+      },
+      {
+        "name": "OFK Beograd",
+        "id": "sr:competitor:5153"
+      },
+      {
+        "name": "Odense Boldklub",
+        "id": "sr:competitor:1286"
+      },
+      {
+        "name": "Randers FC",
+        "id": "sr:competitor:1301"
+      },
+      {
+        "name": "Rapid Bucuresti 1923",
+        "id": "sr:competitor:3302"
+      },
+      {
+        "name": "SK Slovan Bratislava",
+        "id": "sr:competitor:2404"
+      },
+      {
+        "name": "Silkeborg IF",
+        "id": "sr:competitor:1285"
+      },
+      {
+        "name": "Soenderjyske",
+        "id": "sr:competitor:1295"
+      },
+      {
+        "name": "Vejle BK",
+        "id": "sr:competitor:4872"
+      },
+      {
+        "name": "Viborg FF",
+        "id": "sr:competitor:1288"
+      }
+    ]
+  },
+  "Primera LPF": {
+    "2025-2026": [
+      {
+        "name": "Argentinos Juniors",
+        "id": "sr:competitor:3216"
+      },
+      {
+        "name": "Atletico Tucuman",
+        "id": "sr:competitor:36833"
+      },
+      {
+        "name": "Boca Juniors",
+        "id": "sr:competitor:3202"
+      },
+      {
+        "name": "CA Aldosivi",
+        "id": "sr:competitor:36836"
+      },
+      {
+        "name": "CA Banfield",
+        "id": "sr:competitor:3219"
+      },
+      {
+        "name": "CA Barracas Central",
+        "id": "sr:competitor:65668"
+      },
+      {
+        "name": "CA Belgrano de Cordoba",
+        "id": "sr:competitor:3203"
+      },
+      {
+        "name": "CA Central Cordoba SE",
+        "id": "sr:competitor:65676"
+      },
+      {
+        "name": "CA Huracan",
+        "id": "sr:competitor:7629"
+      },
+      {
+        "name": "CA Independiente Avellaneda",
+        "id": "sr:competitor:3209"
+      },
+      {
+        "name": "CA Lanus",
+        "id": "sr:competitor:3218"
+      },
+      {
+        "name": "CA Platense",
+        "id": "sr:competitor:36837"
+      },
+      {
+        "name": "CA River Plate (ARG)",
+        "id": "sr:competitor:3211"
+      },
+      {
+        "name": "CA Rosario Central",
+        "id": "sr:competitor:3217"
+      },
+      {
+        "name": "CA San Lorenzo de Almagro",
+        "id": "sr:competitor:3201"
+      },
+      {
+        "name": "CA Sarmiento Junin",
+        "id": "sr:competitor:42338"
+      },
+      {
+        "name": "CA Talleres de Cordoba",
+        "id": "sr:competitor:3210"
+      },
+      {
+        "name": "CA Tigre",
+        "id": "sr:competitor:7628"
+      },
+      {
+        "name": "CD Godoy Cruz",
+        "id": "sr:competitor:6074"
+      },
+      {
+        "name": "Defensa y Justicia",
+        "id": "sr:competitor:36839"
+      },
+      {
+        "name": "Deportivo Riestra AFBC",
+        "id": "sr:competitor:191648"
+      },
+      {
+        "name": "Estudiantes Rio Cuarto",
+        "id": "sr:competitor:369108"
+      },
+      {
+        "name": "Estudiantes de La Plata",
+        "id": "sr:competitor:3206"
+      },
+      {
+        "name": "Gimnasia y Esgrima La Plata",
+        "id": "sr:competitor:3205"
+      },
+      {
+        "name": "Gimnasia y Esgrima Mendoza",
+        "id": "sr:competitor:189099"
+      },
+      {
+        "name": "Independiente Rivadavia",
+        "id": "sr:competitor:36842"
+      },
+      {
+        "name": "Instituto AC Cordoba",
+        "id": "sr:competitor:4937"
+      },
+      {
+        "name": "Newell's Old Boys",
+        "id": "sr:competitor:3212"
+      },
+      {
+        "name": "Racing Club Avellaneda",
+        "id": "sr:competitor:3215"
+      },
+      {
+        "name": "San Martin de San Juan",
+        "id": "sr:competitor:7772"
+      },
+      {
+        "name": "Union de Santa Fe",
+        "id": "sr:competitor:3204"
+      },
+      {
+        "name": "Velez Sarsfield",
+        "id": "sr:competitor:3208"
+      }
+    ]
+  },
+  "HNL": {
+    "2025-2026": [
+      {
+        "name": "GNK Dinamo Zagreb",
+        "id": "sr:competitor:2032"
+      },
+      {
+        "name": "HNK Gorica",
+        "id": "sr:competitor:43917"
+      },
+      {
+        "name": "HNK Hajduk Split",
+        "id": "sr:competitor:2036"
+      },
+      {
+        "name": "HNK Rijeka",
+        "id": "sr:competitor:2039"
+      },
+      {
+        "name": "HNK Vukovar 1991",
+        "id": "sr:competitor:6672"
+      },
+      {
+        "name": "NK Istra 1961",
+        "id": "sr:competitor:25529"
+      },
+      {
+        "name": "NK Lokomotiva Zagreb",
+        "id": "sr:competitor:36246"
+      },
+      {
+        "name": "NK Osijek",
+        "id": "sr:competitor:2040"
+      },
+      {
+        "name": "NK Slaven Belupo",
+        "id": "sr:competitor:2042"
+      },
+      {
+        "name": "NK Varazdin",
+        "id": "sr:competitor:282653"
+      }
+    ]
+  },
+  "1. Liga": {
+    "2025-2026": [
+      {
+        "name": "1. FC Slovacko Uherske Hradiste",
+        "id": "sr:competitor:4871"
+      },
+      {
+        "name": "Bohemians Prague 1905",
+        "id": "sr:competitor:6064"
+      },
+      {
+        "name": "Dukla Prague",
+        "id": "sr:competitor:7739"
+      },
+      {
+        "name": "FC Banik Ostrava",
+        "id": "sr:competitor:2204"
+      },
+      {
+        "name": "FC Hradec Kralove",
+        "id": "sr:competitor:2217"
+      },
+      {
+        "name": "FC Slovan Liberec",
+        "id": "sr:competitor:2219"
+      },
+      {
+        "name": "FC Viktoria Plzen",
+        "id": "sr:competitor:4502"
+      },
+      {
+        "name": "FC Zlin",
+        "id": "sr:competitor:2220"
+      },
+      {
+        "name": "FK Jablonec",
+        "id": "sr:competitor:2205"
+      },
+      {
+        "name": "FK Mlada Boleslav",
+        "id": "sr:competitor:2224"
+      },
+      {
+        "name": "FK Pardubice",
+        "id": "sr:competitor:2230"
+      },
+      {
+        "name": "FK Teplice",
+        "id": "sr:competitor:2208"
+      },
+      {
+        "name": "MFK Karvina",
+        "id": "sr:competitor:23951"
+      },
+      {
+        "name": "SK Sigma Olomouc",
+        "id": "sr:competitor:2207"
+      },
+      {
+        "name": "Slavia Prague",
+        "id": "sr:competitor:2216"
+      },
+      {
+        "name": "Sparta Prague",
+        "id": "sr:competitor:2218"
+      }
+    ]
+  },
+  "Championship": {
+    "2025-2026": [
+      {
+        "name": "Birmingham City",
+        "id": "sr:competitor:9"
+      },
+      {
+        "name": "Blackburn Rovers",
+        "id": "sr:competitor:46"
+      },
+      {
+        "name": "Bristol City",
+        "id": "sr:competitor:58"
+      },
+      {
+        "name": "Charlton Athletic",
+        "id": "sr:competitor:47"
+      },
+      {
+        "name": "Coventry City",
+        "id": "sr:competitor:11"
+      },
+      {
+        "name": "Derby County",
+        "id": "sr:competitor:27"
+      },
+      {
+        "name": "Hull City",
+        "id": "sr:competitor:96"
+      },
+      {
+        "name": "Ipswich Town",
+        "id": "sr:competitor:32"
+      },
+      {
+        "name": "Leicester City",
+        "id": "sr:competitor:31"
+      },
+      {
+        "name": "Middlesbrough FC",
+        "id": "sr:competitor:36"
+      },
+      {
+        "name": "Millwall FC",
+        "id": "sr:competitor:25"
+      },
+      {
+        "name": "Norwich City",
+        "id": "sr:competitor:263"
+      },
+      {
+        "name": "Oxford United",
+        "id": "sr:competitor:95"
+      },
+      {
+        "name": "Portsmouth FC",
+        "id": "sr:competitor:2"
+      },
+      {
+        "name": "Preston North End",
+        "id": "sr:competitor:21"
+      },
+      {
+        "name": "Queens Park Rangers",
+        "id": "sr:competitor:1"
+      },
+      {
+        "name": "Sheffield United",
+        "id": "sr:competitor:15"
+      },
+      {
+        "name": "Sheffield Wednesday",
+        "id": "sr:competitor:12"
+      },
+      {
+        "name": "Southampton FC",
+        "id": "sr:competitor:45"
+      },
+      {
+        "name": "Stoke City",
+        "id": "sr:competitor:29"
+      },
+      {
+        "name": "Swansea City",
+        "id": "sr:competitor:74"
+      },
+      {
+        "name": "Watford FC",
+        "id": "sr:competitor:24"
+      },
+      {
+        "name": "West Bromwich Albion",
+        "id": "sr:competitor:8"
+      },
+      {
+        "name": "Wrexham AFC",
+        "id": "sr:competitor:64"
+      }
+    ]
+  },
+  "Super League": {
+    "2025-2026": [
+      {
+        "name": "AE Kifisia FC",
+        "id": "sr:competitor:120224"
+      },
+      {
+        "name": "AE Larissa FC",
+        "id": "sr:competitor:3265"
+      },
+      {
+        "name": "AEK Athens",
+        "id": "sr:competitor:3250"
+      },
+      {
+        "name": "APO Levadiakos FC",
+        "id": "sr:competitor:5063"
+      },
+      {
+        "name": "Aris Thessaloniki",
+        "id": "sr:competitor:3252"
+      },
+      {
+        "name": "Asteras Tripolis",
+        "id": "sr:competitor:6342"
+      },
+      {
+        "name": "Atromitos Athinon",
+        "id": "sr:competitor:5062"
+      },
+      {
+        "name": "FC Basel 1893",
+        "id": "sr:competitor:2501"
+      },
+      {
+        "name": "FC Lugano",
+        "id": "sr:competitor:2443"
+      },
+      {
+        "name": "FC Luzern",
+        "id": "sr:competitor:2453"
+      },
+      {
+        "name": "FC Sion",
+        "id": "sr:competitor:2452"
+      },
+      {
+        "name": "FC St. Gallen 1879",
+        "id": "sr:competitor:2442"
+      },
+      {
+        "name": "FC Thun",
+        "id": "sr:competitor:2454"
+      },
+      {
+        "name": "FC Winterthur",
+        "id": "sr:competitor:2458"
+      },
+      {
+        "name": "FC Zurich",
+        "id": "sr:competitor:2450"
+      },
+      {
+        "name": "Grasshopper Club Zurich",
+        "id": "sr:competitor:2449"
+      },
+      {
+        "name": "Lausanne-Sport",
+        "id": "sr:competitor:2446"
+      },
+      {
+        "name": "OFI Crete",
+        "id": "sr:competitor:3241"
+      },
+      {
+        "name": "Olympiacos Piraeus",
+        "id": "sr:competitor:3245"
+      },
+      {
+        "name": "PAOK Thessaloniki",
+        "id": "sr:competitor:3251"
+      },
+      {
+        "name": "Panaitolikos Agrinio",
+        "id": "sr:competitor:7004"
+      },
+      {
+        "name": "Panathinaikos Athens",
+        "id": "sr:competitor:3248"
+      },
+      {
+        "name": "Panserraikos FC",
+        "id": "sr:competitor:6347"
+      },
+      {
+        "name": "Servette Geneva",
+        "id": "sr:competitor:2448"
+      },
+      {
+        "name": "Volos NPS",
+        "id": "sr:competitor:373128"
+      },
+      {
+        "name": "Young Boys Bern",
+        "id": "sr:competitor:2445"
+      }
+    ]
+  },
+  "J1 League": {
+    "2025-2026": [
+      {
+        "name": "Albirex Niigata",
+        "id": "sr:competitor:5128"
+      },
+      {
+        "name": "Avispa Fukuoka",
+        "id": "sr:competitor:3143"
+      },
+      {
+        "name": "Cerezo Osaka",
+        "id": "sr:competitor:3141"
+      },
+      {
+        "name": "FC Tokyo",
+        "id": "sr:competitor:3147"
+      },
+      {
+        "name": "Fagiano Okayama",
+        "id": "sr:competitor:34034"
+      },
+      {
+        "name": "Gamba Osaka",
+        "id": "sr:competitor:3138"
+      },
+      {
+        "name": "JEF United Chiba",
+        "id": "sr:competitor:3144"
+      },
+      {
+        "name": "Kashima Antlers",
+        "id": "sr:competitor:3134"
+      },
+      {
+        "name": "Kashiwa Reysol",
+        "id": "sr:competitor:3140"
+      },
+      {
+        "name": "Kawasaki Frontale",
+        "id": "sr:competitor:5127"
+      },
+      {
+        "name": "Kyoto Sanga FC",
+        "id": "sr:competitor:3149"
+      },
+      {
+        "name": "Machida Zelvia",
+        "id": "sr:competitor:44409"
+      },
+      {
+        "name": "Mito Hollyhock",
+        "id": "sr:competitor:21901"
+      },
+      {
+        "name": "Nagoya Grampus",
+        "id": "sr:competitor:3136"
+      },
+      {
+        "name": "Sanfrecce Hiroshima",
+        "id": "sr:competitor:3135"
+      },
+      {
+        "name": "Shimizu S-Pulse",
+        "id": "sr:competitor:3133"
+      },
+      {
+        "name": "Shonan Bellmare",
+        "id": "sr:competitor:21905"
+      },
+      {
+        "name": "Tokyo Verdy",
+        "id": "sr:competitor:3139"
+      },
+      {
+        "name": "Urawa Red Diamonds",
+        "id": "sr:competitor:3145"
+      },
+      {
+        "name": "V-Varen Nagasaki",
+        "id": "sr:competitor:38154"
+      },
+      {
+        "name": "Vissel Kobe",
+        "id": "sr:competitor:3146"
+      },
+      {
+        "name": "Yokohama F Marinos",
+        "id": "sr:competitor:3137"
+      },
+      {
+        "name": "Yokohama FC",
+        "id": "sr:competitor:7061"
+      }
+    ]
+  },
+  "Ekstraklasa": {
+    "2025-2026": [
+      {
+        "name": "Bruk-Bet Termalica Nieciecza",
+        "id": "sr:competitor:36851"
+      },
+      {
+        "name": "GKS Katowice",
+        "id": "sr:competitor:3112"
+      },
+      {
+        "name": "GKS Piast Gliwice",
+        "id": "sr:competitor:7918"
+      },
+      {
+        "name": "Gornik Zabrze",
+        "id": "sr:competitor:3110"
+      },
+      {
+        "name": "Jagiellonia Bialystok",
+        "id": "sr:competitor:7691"
+      },
+      {
+        "name": "KKS Lech Poznan",
+        "id": "sr:competitor:3121"
+      },
+      {
+        "name": "KS Lechia Gdansk",
+        "id": "sr:competitor:7913"
+      },
+      {
+        "name": "Korona Kielce",
+        "id": "sr:competitor:5065"
+      },
+      {
+        "name": "LKP Motor Lublin",
+        "id": "sr:competitor:7915"
+      },
+      {
+        "name": "Legia Warszawa",
+        "id": "sr:competitor:3106"
+      },
+      {
+        "name": "MKS Arka Gdynia",
+        "id": "sr:competitor:5064"
+      },
+      {
+        "name": "MKS Cracovia Krakow",
+        "id": "sr:competitor:4901"
+      },
+      {
+        "name": "Pogon Szczecin",
+        "id": "sr:competitor:3117"
+      },
+      {
+        "name": "RKS Radomiak Radom",
+        "id": "sr:competitor:7295"
+      },
+      {
+        "name": "RKS Rakow Czestochowa",
+        "id": "sr:competitor:35268"
+      },
+      {
+        "name": "Widzew Lodz",
+        "id": "sr:competitor:3115"
+      },
+      {
+        "name": "Wisla Plock",
+        "id": "sr:competitor:3122"
+      },
+      {
+        "name": "Zaglebie Lubin",
+        "id": "sr:competitor:3113"
+      }
+    ]
+  },
+  "Division 1": {
+    "2025-2026": [
+      {
+        "name": "AL Anwar",
+        "id": "sr:competitor:655033"
+      },
+      {
+        "name": "AL Draih",
+        "id": "sr:competitor:168082"
+      },
+      {
+        "name": "AL Jandal",
+        "id": "sr:competitor:522144"
+      },
+      {
+        "name": "AL Ula",
+        "id": "sr:competitor:1181289"
+      },
+      {
+        "name": "Abha Club",
+        "id": "sr:competitor:168090"
+      },
+      {
+        "name": "Al Bukiryah",
+        "id": "sr:competitor:515042"
+      },
+      {
+        "name": "Al Jubail",
+        "id": "sr:competitor:529647"
+      },
+      {
+        "name": "Al-Adalah",
+        "id": "sr:competitor:276757"
+      },
+      {
+        "name": "Al-Arabi SC (SA)",
+        "id": "sr:competitor:544845"
+      },
+      {
+        "name": "Al-Batin",
+        "id": "sr:competitor:168084"
+      },
+      {
+        "name": "Al-Faisaly FC",
+        "id": "sr:competitor:56035"
+      },
+      {
+        "name": "Al-Jabalain",
+        "id": "sr:competitor:240150"
+      },
+      {
+        "name": "Al-Orobah",
+        "id": "sr:competitor:114259"
+      },
+      {
+        "name": "Al-Raed Club",
+        "id": "sr:competitor:56031"
+      },
+      {
+        "name": "Al-Tai",
+        "id": "sr:competitor:168072"
+      },
+      {
+        "name": "Al-Wehda FC",
+        "id": "sr:competitor:32994"
+      },
+      {
+        "name": "Al-Zulfi FC",
+        "id": "sr:competitor:402067"
+      },
+      {
+        "name": "Jeddah Club",
+        "id": "sr:competitor:368676"
+      }
+    ]
+  },
+  "League One": {
+    "2025-2026": [
+      {
+        "name": "AFC Wimbledon",
+        "id": "sr:competitor:23957"
+      },
+      {
+        "name": "Barnsley FC",
+        "id": "sr:competitor:23"
+      },
+      {
+        "name": "Blackpool FC",
+        "id": "sr:competitor:67"
+      },
+      {
+        "name": "Bolton Wanderers",
+        "id": "sr:competitor:5"
+      },
+      {
+        "name": "Bradford City FC",
+        "id": "sr:competitor:22"
+      },
+      {
+        "name": "Burton Albion",
+        "id": "sr:competitor:134"
+      },
+      {
+        "name": "Cardiff City",
+        "id": "sr:competitor:61"
+      },
+      {
+        "name": "Doncaster Rovers",
+        "id": "sr:competitor:84"
+      },
+      {
+        "name": "Exeter City",
+        "id": "sr:competitor:86"
+      },
+      {
+        "name": "Huddersfield Town",
+        "id": "sr:competitor:59"
+      },
+      {
+        "name": "Leyton Orient London",
+        "id": "sr:competitor:83"
+      },
+      {
+        "name": "Lincoln City",
+        "id": "sr:competitor:92"
+      },
+      {
+        "name": "Luton Town",
+        "id": "sr:competitor:72"
+      },
+      {
+        "name": "Mansfield Town",
+        "id": "sr:competitor:70"
+      },
+      {
+        "name": "Northampton Town",
+        "id": "sr:competitor:57"
+      },
+      {
+        "name": "Peterborough United",
+        "id": "sr:competitor:54"
+      },
+      {
+        "name": "Plymouth Argyle",
+        "id": "sr:competitor:71"
+      },
+      {
+        "name": "Port Vale",
+        "id": "sr:competitor:55"
+      },
+      {
+        "name": "Reading FC",
+        "id": "sr:competitor:28"
+      },
+      {
+        "name": "Rotherham United",
+        "id": "sr:competitor:13"
+      },
+      {
+        "name": "Stevenage FC",
+        "id": "sr:competitor:133"
+      },
+      {
+        "name": "Stockport County FC",
+        "id": "sr:competitor:10"
+      },
+      {
+        "name": "Wigan Athletic",
+        "id": "sr:competitor:49"
+      },
+      {
+        "name": "Wycombe Wanderers",
+        "id": "sr:competitor:62"
+      }
+    ]
+  },
+  "UEFA Conference League": {
+    "2025-2026": [
+      {
+        "name": "AC Omonia Nicosia",
+        "id": "sr:competitor:3395"
+      },
+      {
+        "name": "AC Virtus",
+        "id": "sr:competitor:36261"
+      },
+      {
+        "name": "ACF Fiorentina",
+        "id": "sr:competitor:2693"
+      },
+      {
+        "name": "AEK Athens",
+        "id": "sr:competitor:3250"
+      },
+      {
+        "name": "AEK Larnaca",
+        "id": "sr:competitor:3404"
+      },
+      {
+        "name": "AIK",
+        "id": "sr:competitor:1764"
+      },
+      {
+        "name": "AZ Alkmaar",
+        "id": "sr:competitor:2950"
+      },
+      {
+        "name": "Aberdeen FC",
+        "id": "sr:competitor:2355"
+      },
+      {
+        "name": "Araz Nakhchivan PFK",
+        "id": "sr:competitor:119066"
+      },
+      {
+        "name": "Aris Limassol FC",
+        "id": "sr:competitor:3397"
+      },
+      {
+        "name": "BK Hacken",
+        "id": "sr:competitor:1760"
+      },
+      {
+        "name": "Beitar Jerusalem FC",
+        "id": "sr:competitor:5204"
+      },
+      {
+        "name": "Besiktas Istanbul",
+        "id": "sr:competitor:3050"
+      },
+      {
+        "name": "Breidablik Kopavogur",
+        "id": "sr:competitor:1901"
+      },
+      {
+        "name": "Broendby IF",
+        "id": "sr:competitor:1281"
+      },
+      {
+        "name": "CS Universitatea Craiova",
+        "id": "sr:competitor:116223"
+      },
+      {
+        "name": "Crystal Palace",
+        "id": "sr:competitor:7"
+      },
+      {
+        "name": "Dundee United",
+        "id": "sr:competitor:2349"
+      },
+      {
+        "name": "FC Ararat-Armenia",
+        "id": "sr:competitor:364472"
+      },
+      {
+        "name": "FC Arda Kardzhali",
+        "id": "sr:competitor:364786"
+      },
+      {
+        "name": "FC Astana",
+        "id": "sr:competitor:36155"
+      },
+      {
+        "name": "FC Ballkani",
+        "id": "sr:competitor:280003"
+      },
+      {
+        "name": "FC Banik Ostrava",
+        "id": "sr:competitor:2204"
+      },
+      {
+        "name": "FC CFR 1907 Cluj",
+        "id": "sr:competitor:5287"
+      },
+      {
+        "name": "FC Differdange 03",
+        "id": "sr:competitor:7605"
+      },
+      {
+        "name": "FC Dinamo City",
+        "id": "sr:competitor:5217"
+      },
+      {
+        "name": "FC Dynamo Kyiv",
+        "id": "sr:competitor:3305"
+      },
+      {
+        "name": "FC Lugano",
+        "id": "sr:competitor:2443"
+      },
+      {
+        "name": "FC Milsami",
+        "id": "sr:competitor:53475"
+      },
+      {
+        "name": "FC Neman Grodno",
+        "id": "sr:competitor:3356"
+      },
+      {
+        "name": "FC Noah Yerevan",
+        "id": "sr:competitor:364474"
+      },
+      {
+        "name": "FC Polissya Zhytomyr",
+        "id": "sr:competitor:350828"
+      },
+      {
+        "name": "FC RFS",
+        "id": "sr:competitor:68718"
+      },
+      {
+        "name": "FC Shakhtar Donetsk",
+        "id": "sr:competitor:3313"
+      },
+      {
+        "name": "FC Sheriff Tiraspol",
+        "id": "sr:competitor:5173"
+      },
+      {
+        "name": "FC Spartak Trnava",
+        "id": "sr:competitor:2406"
+      },
+      {
+        "name": "FC Vaduz",
+        "id": "sr:competitor:2463"
+      },
+      {
+        "name": "FCI Levadia Tallinn",
+        "id": "sr:competitor:3342"
+      },
+      {
+        "name": "FK Austria Wien",
+        "id": "sr:competitor:2203"
+      },
+      {
+        "name": "FK Kauno Zalgiris",
+        "id": "sr:competitor:80741"
+      },
+      {
+        "name": "FK Partizan Belgrade",
+        "id": "sr:competitor:5152"
+      },
+      {
+        "name": "FSV Mainz",
+        "id": "sr:competitor:2556"
+      },
+      {
+        "name": "Fredrikstad FK",
+        "id": "sr:competitor:687"
+      },
+      {
+        "name": "HNK Hajduk Split",
+        "id": "sr:competitor:2036"
+      },
+      {
+        "name": "HNK Rijeka",
+        "id": "sr:competitor:2039"
+      },
+      {
+        "name": "HSK Zrinjski Mostar",
+        "id": "sr:competitor:5178"
+      },
+      {
+        "name": "Hammarby IF",
+        "id": "sr:competitor:1758"
+      },
+      {
+        "name": "Hamrun Spartans FC",
+        "id": "sr:competitor:33583"
+      },
+      {
+        "name": "Hibernian FC",
+        "id": "sr:competitor:2354"
+      },
+      {
+        "name": "Istanbul Basaksehir",
+        "id": "sr:competitor:3086"
+      },
+      {
+        "name": "Jagiellonia Bialystok",
+        "id": "sr:competitor:7691"
+      },
+      {
+        "name": "KF Drita",
+        "id": "sr:competitor:277835"
+      },
+      {
+        "name": "KF Egnatia Rrogozhine",
+        "id": "sr:competitor:372056"
+      },
+      {
+        "name": "KI Klaksvik",
+        "id": "sr:competitor:5194"
+      },
+      {
+        "name": "KKS Lech Poznan",
+        "id": "sr:competitor:3121"
+      },
+      {
+        "name": "Kuopion Palloseura",
+        "id": "sr:competitor:2244"
+      },
+      {
+        "name": "Larne FC",
+        "id": "sr:competitor:5184"
+      },
+      {
+        "name": "Lausanne-Sport",
+        "id": "sr:competitor:2446"
+      },
+      {
+        "name": "Legia Warszawa",
+        "id": "sr:competitor:3106"
+      },
+      {
+        "name": "Lincoln Red Imps",
+        "id": "sr:competitor:126304"
+      },
+      {
+        "name": "Linfield FC",
+        "id": "sr:competitor:5272"
+      },
+      {
+        "name": "Maccabi Haifa FC",
+        "id": "sr:competitor:5197"
+      },
+      {
+        "name": "NK Celje",
+        "id": "sr:competitor:2413"
+      },
+      {
+        "name": "Olimpija Ljubljana",
+        "id": "sr:competitor:2416"
+      },
+      {
+        "name": "PFC Levski Sofia",
+        "id": "sr:competitor:3273"
+      },
+      {
+        "name": "Paksi FC",
+        "id": "sr:competitor:6059"
+      },
+      {
+        "name": "RKS Rakow Czestochowa",
+        "id": "sr:competitor:35268"
+      },
+      {
+        "name": "RSC Anderlecht",
+        "id": "sr:competitor:2900"
+      },
+      {
+        "name": "Rayo Vallecano",
+        "id": "sr:competitor:2818"
+      },
+      {
+        "name": "Riga FC",
+        "id": "sr:competitor:162368"
+      },
+      {
+        "name": "Rosenborg BK",
+        "id": "sr:competitor:1161"
+      },
+      {
+        "name": "SK Rapid",
+        "id": "sr:competitor:2055"
+      },
+      {
+        "name": "SK Sigma Olomouc",
+        "id": "sr:competitor:2207"
+      },
+      {
+        "name": "SK Slovan Bratislava",
+        "id": "sr:competitor:2404"
+      },
+      {
+        "name": "Sabah Masazir",
+        "id": "sr:competitor:382568"
+      },
+      {
+        "name": "Saint Patrick´s Athletic FC",
+        "id": "sr:competitor:3169"
+      },
+      {
+        "name": "Samsunspor",
+        "id": "sr:competitor:3053"
+      },
+      {
+        "name": "Santa Clara Azores",
+        "id": "sr:competitor:3011"
+      },
+      {
+        "name": "Servette Geneva",
+        "id": "sr:competitor:2448"
+      },
+      {
+        "name": "Shamrock Rovers",
+        "id": "sr:competitor:3177"
+      },
+      {
+        "name": "Shelbourne FC",
+        "id": "sr:competitor:3174"
+      },
+      {
+        "name": "Shkendija Tetovo",
+        "id": "sr:competitor:5413"
+      },
+      {
+        "name": "Silkeborg IF",
+        "id": "sr:competitor:1285"
+      },
+      {
+        "name": "Sparta Prague",
+        "id": "sr:competitor:2218"
+      },
+      {
+        "name": "Strasbourg Alsace",
+        "id": "sr:competitor:1659"
+      },
+      {
+        "name": "Viking FK",
+        "id": "sr:competitor:1164"
+      },
+      {
+        "name": "Vikingur Gota",
+        "id": "sr:competitor:5193"
+      },
+      {
+        "name": "Vikingur Reykjavik",
+        "id": "sr:competitor:1908"
+      },
+      {
+        "name": "WKW ETO FC Gyor",
+        "id": "sr:competitor:1923"
+      },
+      {
+        "name": "Wolfsberger AC",
+        "id": "sr:competitor:2076"
+      }
+    ]
+  },
+  "Bundesliga": {
+    "2025-2026": [
+      {
+        "name": "1. FC Cologne",
+        "id": "sr:competitor:2671"
+      },
+      {
+        "name": "1. FC Heidenheim",
+        "id": "sr:competitor:5885"
+      },
+      {
+        "name": "Bayer Leverkusen",
+        "id": "sr:competitor:2681"
+      },
+      {
+        "name": "Bayern Munich",
+        "id": "sr:competitor:2672"
+      },
+      {
+        "name": "Borussia Dortmund",
+        "id": "sr:competitor:2673"
+      },
+      {
+        "name": "Borussia Monchengladbach",
+        "id": "sr:competitor:2527"
+      },
+      {
+        "name": "Eintracht Frankfurt",
+        "id": "sr:competitor:2674"
+      },
+      {
+        "name": "FC Augsburg",
+        "id": "sr:competitor:2600"
+      },
+      {
+        "name": "FC St. Pauli",
+        "id": "sr:competitor:2526"
+      },
+      {
+        "name": "FSV Mainz",
+        "id": "sr:competitor:2556"
+      },
+      {
+        "name": "Hamburger SV",
+        "id": "sr:competitor:2676"
+      },
+      {
+        "name": "RB Leipzig",
+        "id": "sr:competitor:36360"
+      },
+      {
+        "name": "SC Freiburg",
+        "id": "sr:competitor:2538"
+      },
+      {
+        "name": "TSG Hoffenheim",
+        "id": "sr:competitor:2569"
+      },
+      {
+        "name": "Union Berlin",
+        "id": "sr:competitor:2547"
+      },
+      {
+        "name": "VFL Wolfsburg",
+        "id": "sr:competitor:2524"
+      },
+      {
+        "name": "VfB Stuttgart",
+        "id": "sr:competitor:2677"
+      },
+      {
+        "name": "Werder Bremen",
+        "id": "sr:competitor:2534"
+      }
+    ]
+  },
+  "Premiership": {
+    "2025-2026": [
+      {
+        "name": "Aberdeen FC",
+        "id": "sr:competitor:2355"
+      },
+      {
+        "name": "AmaZulu FC",
+        "id": "sr:competitor:7655"
+      },
+      {
+        "name": "Celtic Glasgow",
+        "id": "sr:competitor:2352"
+      },
+      {
+        "name": "Chippa United FC",
+        "id": "sr:competitor:70946"
+      },
+      {
+        "name": "Dundee FC",
+        "id": "sr:competitor:2357"
+      },
+      {
+        "name": "Dundee United",
+        "id": "sr:competitor:2349"
+      },
+      {
+        "name": "Durban City",
+        "id": "sr:competitor:1176555"
+      },
+      {
+        "name": "Falkirk FC",
+        "id": "sr:competitor:2363"
+      },
+      {
+        "name": "Glasgow Rangers",
+        "id": "sr:competitor:2351"
+      },
+      {
+        "name": "Heart of Midlothian FC",
+        "id": "sr:competitor:2353"
+      },
+      {
+        "name": "Hibernian FC",
+        "id": "sr:competitor:2354"
+      },
+      {
+        "name": "Kaizer Chiefs",
+        "id": "sr:competitor:7663"
+      },
+      {
+        "name": "Kilmarnock FC",
+        "id": "sr:competitor:2347"
+      },
+      {
+        "name": "Lamontville Golden Arrows",
+        "id": "sr:competitor:7664"
+      },
+      {
+        "name": "Livingston FC",
+        "id": "sr:competitor:2356"
+      },
+      {
+        "name": "Magesi FC",
+        "id": "sr:competitor:90844"
+      },
+      {
+        "name": "Mamelodi Sundowns",
+        "id": "sr:competitor:7665"
+      },
+      {
+        "name": "Marumo Gallants FC",
+        "id": "sr:competitor:367886"
+      },
+      {
+        "name": "Motherwell FC",
+        "id": "sr:competitor:2346"
+      },
+      {
+        "name": "Orbit College FC",
+        "id": "sr:competitor:407263"
+      },
+      {
+        "name": "Orlando Pirates FC",
+        "id": "sr:competitor:7668"
+      },
+      {
+        "name": "Polokwane City",
+        "id": "sr:competitor:25002"
+      },
+      {
+        "name": "Richards Bay FC",
+        "id": "sr:competitor:367882"
+      },
+      {
+        "name": "Sekhukhune United",
+        "id": "sr:competitor:760704"
+      },
+      {
+        "name": "Siwelele FC",
+        "id": "sr:competitor:1269648"
+      },
+      {
+        "name": "St Mirren FC",
+        "id": "sr:competitor:2359"
+      },
+      {
+        "name": "Stellenbosch FC",
+        "id": "sr:competitor:43555"
+      },
+      {
+        "name": "TS Galaxy FC",
+        "id": "sr:competitor:475016"
+      }
+    ]
+  },
+  "Pro League": {
+    "2025-2026": [
+      {
+        "name": "Cercle Brugge",
+        "id": "sr:competitor:2929"
+      },
+      {
+        "name": "Club Brugge",
+        "id": "sr:competitor:2888"
+      },
+      {
+        "name": "FCV Dender EH",
+        "id": "sr:competitor:2922"
+      },
+      {
+        "name": "KAA Gent",
+        "id": "sr:competitor:2903"
+      },
+      {
+        "name": "KRC Genk",
+        "id": "sr:competitor:2890"
+      },
+      {
+        "name": "KVC Westerlo",
+        "id": "sr:competitor:2893"
+      },
+      {
+        "name": "Oud-Heverlee Leuven",
+        "id": "sr:competitor:2918"
+      },
+      {
+        "name": "RAAL La Louviere",
+        "id": "sr:competitor:752197"
+      },
+      {
+        "name": "RSC Anderlecht",
+        "id": "sr:competitor:2900"
+      },
+      {
+        "name": "Royal Antwerp FC",
+        "id": "sr:competitor:2889"
+      },
+      {
+        "name": "Royal Charleroi SC",
+        "id": "sr:competitor:2898"
+      },
+      {
+        "name": "SV Zulte Waregem",
+        "id": "sr:competitor:2933"
+      },
+      {
+        "name": "St. Truidense VV",
+        "id": "sr:competitor:2895"
+      },
+      {
+        "name": "Standard Liege",
+        "id": "sr:competitor:2901"
+      },
+      {
+        "name": "Union Saint-Gilloise",
+        "id": "sr:competitor:4860"
+      },
+      {
+        "name": "Yellow-Red KV Mechelen",
+        "id": "sr:competitor:5044"
+      }
+    ]
+  },
+  "2. Bundesliga": {
+    "2025-2026": [
+      {
+        "name": "1 FC Kaiserslautern",
+        "id": "sr:competitor:2675"
+      },
+      {
+        "name": "1 FC Nuremberg",
+        "id": "sr:competitor:2523"
+      },
+      {
+        "name": "1. FC Magdeburg",
+        "id": "sr:competitor:2591"
+      },
+      {
+        "name": "Arminia Bielefeld",
+        "id": "sr:competitor:2540"
+      },
+      {
+        "name": "Dynamo Dresden",
+        "id": "sr:competitor:2595"
+      },
+      {
+        "name": "Eintracht Braunschweig",
+        "id": "sr:competitor:2557"
+      },
+      {
+        "name": "Fortuna Dusseldorf",
+        "id": "sr:competitor:2588"
+      },
+      {
+        "name": "Greuther Furth",
+        "id": "sr:competitor:2551"
+      },
+      {
+        "name": "Hannover 96",
+        "id": "sr:competitor:2541"
+      },
+      {
+        "name": "Hertha BSC",
+        "id": "sr:competitor:2528"
+      },
+      {
+        "name": "Holstein Kiel",
+        "id": "sr:competitor:2573"
+      },
+      {
+        "name": "Karlsruher SC",
+        "id": "sr:competitor:2553"
+      },
+      {
+        "name": "SC Paderborn 07",
+        "id": "sr:competitor:2561"
+      },
+      {
+        "name": "SC Preussen 06 Munster",
+        "id": "sr:competitor:2590"
+      },
+      {
+        "name": "SV 07 Elversberg",
+        "id": "sr:competitor:2598"
+      },
+      {
+        "name": "SV Darmstadt 98",
+        "id": "sr:competitor:2576"
+      },
+      {
+        "name": "Schalke 04",
+        "id": "sr:competitor:2530"
+      },
+      {
+        "name": "VfL Bochum",
+        "id": "sr:competitor:2542"
+      }
+    ]
+  },
+  "Super Lig": {
+    "2025-2026": [
+      {
+        "name": "Alanyaspor",
+        "id": "sr:competitor:6362"
+      },
+      {
+        "name": "Antalyaspor",
+        "id": "sr:competitor:3056"
+      },
+      {
+        "name": "Besiktas Istanbul",
+        "id": "sr:competitor:3050"
+      },
+      {
+        "name": "Caykur Rizespor",
+        "id": "sr:competitor:3064"
+      },
+      {
+        "name": "Eyupspor",
+        "id": "sr:competitor:7040"
+      },
+      {
+        "name": "Fatih Karagumruk Istanbul",
+        "id": "sr:competitor:4954"
+      },
+      {
+        "name": "Fenerbahce Istanbul",
+        "id": "sr:competitor:3052"
+      },
+      {
+        "name": "Galatasaray Istanbul",
+        "id": "sr:competitor:3061"
+      },
+      {
+        "name": "Gaziantep FK",
+        "id": "sr:competitor:5138"
+      },
+      {
+        "name": "Genclerbirligi SK",
+        "id": "sr:competitor:7802"
+      },
+      {
+        "name": "Goztepe Izmir",
+        "id": "sr:competitor:3054"
+      },
+      {
+        "name": "Istanbul Basaksehir",
+        "id": "sr:competitor:3086"
+      },
+      {
+        "name": "Kasimpasa Istanbul",
+        "id": "sr:competitor:6063"
+      },
+      {
+        "name": "Kayserispor",
+        "id": "sr:competitor:3072"
+      },
+      {
+        "name": "Kocaelispor",
+        "id": "sr:competitor:3065"
+      },
+      {
+        "name": "Konyaspor",
+        "id": "sr:competitor:3085"
+      },
+      {
+        "name": "Samsunspor",
+        "id": "sr:competitor:3053"
+      },
+      {
+        "name": "Trabzonspor",
+        "id": "sr:competitor:3051"
+      }
+    ]
+  },
+  "Serie B": {
+    "2025-2026": [
+      {
+        "name": "AC Monza",
+        "id": "sr:competitor:2729"
+      },
+      {
+        "name": "Calcio Padova",
+        "id": "sr:competitor:2741"
+      },
+      {
+        "name": "Carrarese Calcio",
+        "id": "sr:competitor:2745"
+      },
+      {
+        "name": "Cesena FC",
+        "id": "sr:competitor:2742"
+      },
+      {
+        "name": "Delfino Pescara",
+        "id": "sr:competitor:2728"
+      },
+      {
+        "name": "Empoli FC",
+        "id": "sr:competitor:2705"
+      },
+      {
+        "name": "FC Sudtirol Bolzano",
+        "id": "sr:competitor:2760"
+      },
+      {
+        "name": "Frosinone Calcio",
+        "id": "sr:competitor:2801"
+      },
+      {
+        "name": "Juve Stabia",
+        "id": "sr:competitor:5324"
+      },
+      {
+        "name": "Mantova 1911",
+        "id": "sr:competitor:2770"
+      },
+      {
+        "name": "Modena FC",
+        "id": "sr:competitor:2706"
+      },
+      {
+        "name": "Palermo FC",
+        "id": "sr:competitor:2715"
+      },
+      {
+        "name": "Reggiana 1919",
+        "id": "sr:competitor:24516"
+      },
+      {
+        "name": "SSC Bari",
+        "id": "sr:competitor:2712"
+      },
+      {
+        "name": "Sampdoria Genoa",
+        "id": "sr:competitor:2711"
+      },
+      {
+        "name": "Spezia Calcio",
+        "id": "sr:competitor:2735"
+      },
+      {
+        "name": "US Avellino",
+        "id": "sr:competitor:2730"
+      },
+      {
+        "name": "US Catanzaro",
+        "id": "sr:competitor:2796"
+      },
+      {
+        "name": "Venezia FC",
+        "id": "sr:competitor:2688"
+      },
+      {
+        "name": "Virtus Entella",
+        "id": "sr:competitor:43680"
+      }
+    ]
+  },
+  "LaLiga 2": {
+    "2025-2026": [
+      {
+        "name": "AD Ceuta",
+        "id": "sr:competitor:2869"
+      },
+      {
+        "name": "Albacete Balompie",
+        "id": "sr:competitor:2848"
+      },
+      {
+        "name": "Burgos CF",
+        "id": "sr:competitor:2854"
+      },
+      {
+        "name": "CD Castellon",
+        "id": "sr:competitor:5067"
+      },
+      {
+        "name": "CD Leganes",
+        "id": "sr:competitor:2845"
+      },
+      {
+        "name": "CD Mirandes",
+        "id": "sr:competitor:35092"
+      },
+      {
+        "name": "Cadiz CF",
+        "id": "sr:competitor:4488"
+      },
+      {
+        "name": "Cordoba CF",
+        "id": "sr:competitor:2850"
+      },
+      {
+        "name": "Cultural Leonesa",
+        "id": "sr:competitor:2868"
+      },
+      {
+        "name": "FC Andorra",
+        "id": "sr:competitor:610334"
+      },
+      {
+        "name": "Granada CF",
+        "id": "sr:competitor:33779"
+      },
+      {
+        "name": "Malaga CF",
+        "id": "sr:competitor:2830"
+      },
+      {
+        "name": "RC Deportivo De La Coruna",
+        "id": "sr:competitor:2832"
+      },
+      {
+        "name": "Racing Santander",
+        "id": "sr:competitor:2835"
+      },
+      {
+        "name": "Real Sociedad San Sebastian B",
+        "id": "sr:competitor:24360"
+      },
+      {
+        "name": "Real Valladolid",
+        "id": "sr:competitor:2831"
+      },
+      {
+        "name": "Real Zaragoza",
+        "id": "sr:competitor:2815"
+      },
+      {
+        "name": "SD Eibar",
+        "id": "sr:competitor:2839"
+      },
+      {
+        "name": "SD Huesca",
+        "id": "sr:competitor:24265"
+      },
+      {
+        "name": "Sporting Gijon",
+        "id": "sr:competitor:2852"
+      },
+      {
+        "name": "UD Almeria",
+        "id": "sr:competitor:2858"
+      },
+      {
+        "name": "UD Las Palmas",
+        "id": "sr:competitor:6577"
+      }
+    ]
+  },
+  "UEFA Europa League": {
+    "2025-2026": [
+      {
+        "name": "AEK Larnaca",
+        "id": "sr:competitor:3404"
+      },
+      {
+        "name": "AS Roma",
+        "id": "sr:competitor:2702"
+      },
+      {
+        "name": "Aberdeen FC",
+        "id": "sr:competitor:2355"
+      },
+      {
+        "name": "Aston Villa",
+        "id": "sr:competitor:40"
+      },
+      {
+        "name": "BK Hacken",
+        "id": "sr:competitor:1760"
+      },
+      {
+        "name": "Bologna FC",
+        "id": "sr:competitor:2685"
+      },
+      {
+        "name": "Breidablik Kopavogur",
+        "id": "sr:competitor:1901"
+      },
+      {
+        "name": "Celtic Glasgow",
+        "id": "sr:competitor:2352"
+      },
+      {
+        "name": "FC Basel 1893",
+        "id": "sr:competitor:2501"
+      },
+      {
+        "name": "FC CFR 1907 Cluj",
+        "id": "sr:competitor:5287"
+      },
+      {
+        "name": "FC Dynamo Kyiv",
+        "id": "sr:competitor:3305"
+      },
+      {
+        "name": "FC Midtjylland",
+        "id": "sr:competitor:1289"
+      },
+      {
+        "name": "FC Noah Yerevan",
+        "id": "sr:competitor:364474"
+      },
+      {
+        "name": "FC Porto",
+        "id": "sr:competitor:3002"
+      },
+      {
+        "name": "FC RFS",
+        "id": "sr:competitor:68718"
+      },
+      {
+        "name": "FC Salzburg",
+        "id": "sr:competitor:2046"
+      },
+      {
+        "name": "FC Shakhtar Donetsk",
+        "id": "sr:competitor:3313"
+      },
+      {
+        "name": "FC Utrecht",
+        "id": "sr:competitor:2948"
+      },
+      {
+        "name": "FC Viktoria Plzen",
+        "id": "sr:competitor:4502"
+      },
+      {
+        "name": "FK Crvena Zvezda Belgrade",
+        "id": "sr:competitor:5149"
+      },
+      {
+        "name": "Fenerbahce Istanbul",
+        "id": "sr:competitor:3052"
+      },
+      {
+        "name": "Ferencvarosi Budapest",
+        "id": "sr:competitor:1925"
+      },
+      {
+        "name": "Feyenoord Rotterdam",
+        "id": "sr:competitor:2959"
+      },
+      {
+        "name": "Fotbal Club FCSB",
+        "id": "sr:competitor:3301"
+      },
+      {
+        "name": "Fredrikstad FK",
+        "id": "sr:competitor:687"
+      },
+      {
+        "name": "GNK Dinamo Zagreb",
+        "id": "sr:competitor:2032"
+      },
+      {
+        "name": "Glasgow Rangers",
+        "id": "sr:competitor:2351"
+      },
+      {
+        "name": "Go Ahead Eagles",
+        "id": "sr:competitor:2979"
+      },
+      {
+        "name": "HNK Rijeka",
+        "id": "sr:competitor:2039"
+      },
+      {
+        "name": "HSK Zrinjski Mostar",
+        "id": "sr:competitor:5178"
+      },
+      {
+        "name": "Hamrun Spartans FC",
+        "id": "sr:competitor:33583"
+      },
+      {
+        "name": "KF Drita",
+        "id": "sr:competitor:277835"
+      },
+      {
+        "name": "KKS Lech Poznan",
+        "id": "sr:competitor:3121"
+      },
+      {
+        "name": "KRC Genk",
+        "id": "sr:competitor:2890"
+      },
+      {
+        "name": "Kuopion Palloseura",
+        "id": "sr:competitor:2244"
+      },
+      {
+        "name": "Legia Warszawa",
+        "id": "sr:competitor:3106"
+      },
+      {
+        "name": "Lille OSC",
+        "id": "sr:competitor:1643"
+      },
+      {
+        "name": "Lincoln Red Imps",
+        "id": "sr:competitor:126304"
+      },
+      {
+        "name": "Maccabi Tel Aviv FC",
+        "id": "sr:competitor:5198"
+      },
+      {
+        "name": "Malmo FF",
+        "id": "sr:competitor:1892"
+      },
+      {
+        "name": "Nottingham Forest",
+        "id": "sr:competitor:14"
+      },
+      {
+        "name": "OGC Nice",
+        "id": "sr:competitor:1661"
+      },
+      {
+        "name": "Olympique Lyon",
+        "id": "sr:competitor:1649"
+      },
+      {
+        "name": "PAOK Thessaloniki",
+        "id": "sr:competitor:3251"
+      },
+      {
+        "name": "PFC Ludogorets 1945 Razgrad",
+        "id": "sr:competitor:43840"
+      },
+      {
+        "name": "Panathinaikos Athens",
+        "id": "sr:competitor:3248"
+      },
+      {
+        "name": "RC Celta de Vigo",
+        "id": "sr:competitor:2821"
+      },
+      {
+        "name": "Real Betis Seville",
+        "id": "sr:competitor:2816"
+      },
+      {
+        "name": "SC Braga",
+        "id": "sr:competitor:2999"
+      },
+      {
+        "name": "SC Freiburg",
+        "id": "sr:competitor:2538"
+      },
+      {
+        "name": "SK Brann",
+        "id": "sr:competitor:1159"
+      },
+      {
+        "name": "SK Sigma Olomouc",
+        "id": "sr:competitor:2207"
+      },
+      {
+        "name": "SK Slovan Bratislava",
+        "id": "sr:competitor:2404"
+      },
+      {
+        "name": "SK Sturm Graz",
+        "id": "sr:competitor:2051"
+      },
+      {
+        "name": "Samsunspor",
+        "id": "sr:competitor:3053"
+      },
+      {
+        "name": "Servette Geneva",
+        "id": "sr:competitor:2448"
+      },
+      {
+        "name": "Shelbourne FC",
+        "id": "sr:competitor:3174"
+      },
+      {
+        "name": "Shkendija Tetovo",
+        "id": "sr:competitor:5413"
+      },
+      {
+        "name": "VfB Stuttgart",
+        "id": "sr:competitor:2677"
+      },
+      {
+        "name": "Wolfsberger AC",
+        "id": "sr:competitor:2076"
+      },
+      {
+        "name": "Young Boys Bern",
+        "id": "sr:competitor:2445"
+      }
+    ]
+  },
+  "UEFA Champions League": {
+    "2025-2026": [
+      {
+        "name": "AS Monaco",
+        "id": "sr:competitor:1653"
+      },
+      {
+        "name": "Ajax Amsterdam",
+        "id": "sr:competitor:2953"
+      },
+      {
+        "name": "Arsenal FC",
+        "id": "sr:competitor:42"
+      },
+      {
+        "name": "Atalanta BC",
+        "id": "sr:competitor:2686"
+      },
+      {
+        "name": "Athletic Bilbao",
+        "id": "sr:competitor:2825"
+      },
+      {
+        "name": "Atletico Madrid",
+        "id": "sr:competitor:2836"
+      },
+      {
+        "name": "Bayer Leverkusen",
+        "id": "sr:competitor:2681"
+      },
+      {
+        "name": "Bayern Munich",
+        "id": "sr:competitor:2672"
+      },
+      {
+        "name": "Bodoe/Glimt",
+        "id": "sr:competitor:656"
+      },
+      {
+        "name": "Borussia Dortmund",
+        "id": "sr:competitor:2673"
+      },
+      {
+        "name": "Celtic Glasgow",
+        "id": "sr:competitor:2352"
+      },
+      {
+        "name": "Chelsea FC",
+        "id": "sr:competitor:38"
+      },
+      {
+        "name": "Club Brugge",
+        "id": "sr:competitor:2888"
+      },
+      {
+        "name": "Eintracht Frankfurt",
+        "id": "sr:competitor:2674"
+      },
+      {
+        "name": "FC Barcelona",
+        "id": "sr:competitor:2817"
+      },
+      {
+        "name": "FC Basel 1893",
+        "id": "sr:competitor:2501"
+      },
+      {
+        "name": "FC Copenhagen",
+        "id": "sr:competitor:1284"
+      },
+      {
+        "name": "FC Dynamo Kyiv",
+        "id": "sr:competitor:3305"
+      },
+      {
+        "name": "FC Kairat Almaty",
+        "id": "sr:competitor:5172"
+      },
+      {
+        "name": "FC Salzburg",
+        "id": "sr:competitor:2046"
+      },
+      {
+        "name": "FC Viktoria Plzen",
+        "id": "sr:competitor:4502"
+      },
+      {
+        "name": "FK Crvena Zvezda Belgrade",
+        "id": "sr:competitor:5149"
+      },
+      {
+        "name": "Fenerbahce Istanbul",
+        "id": "sr:competitor:3052"
+      },
+      {
+        "name": "Ferencvarosi Budapest",
+        "id": "sr:competitor:1925"
+      },
+      {
+        "name": "Feyenoord Rotterdam",
+        "id": "sr:competitor:2959"
+      },
+      {
+        "name": "Galatasaray Istanbul",
+        "id": "sr:competitor:3061"
+      },
+      {
+        "name": "Glasgow Rangers",
+        "id": "sr:competitor:2351"
+      },
+      {
+        "name": "Inter Milano",
+        "id": "sr:competitor:2697"
+      },
+      {
+        "name": "Juventus Turin",
+        "id": "sr:competitor:2687"
+      },
+      {
+        "name": "KKS Lech Poznan",
+        "id": "sr:competitor:3121"
+      },
+      {
+        "name": "Liverpool FC",
+        "id": "sr:competitor:44"
+      },
+      {
+        "name": "Malmo FF",
+        "id": "sr:competitor:1892"
+      },
+      {
+        "name": "Manchester City",
+        "id": "sr:competitor:17"
+      },
+      {
+        "name": "Newcastle United",
+        "id": "sr:competitor:39"
+      },
+      {
+        "name": "OGC Nice",
+        "id": "sr:competitor:1661"
+      },
+      {
+        "name": "Olympiacos Piraeus",
+        "id": "sr:competitor:3245"
+      },
+      {
+        "name": "Olympique Marseille",
+        "id": "sr:competitor:1641"
+      },
+      {
+        "name": "PFC Ludogorets 1945 Razgrad",
+        "id": "sr:competitor:43840"
+      },
+      {
+        "name": "PSV Eindhoven",
+        "id": "sr:competitor:2952"
+      },
+      {
+        "name": "Pafos FC",
+        "id": "sr:competitor:171626"
+      },
+      {
+        "name": "Paris Saint-Germain",
+        "id": "sr:competitor:1644"
+      },
+      {
+        "name": "Qarabag FK",
+        "id": "sr:competitor:5962"
+      },
+      {
+        "name": "Real Madrid",
+        "id": "sr:competitor:2829"
+      },
+      {
+        "name": "SK Slovan Bratislava",
+        "id": "sr:competitor:2404"
+      },
+      {
+        "name": "SK Sturm Graz",
+        "id": "sr:competitor:2051"
+      },
+      {
+        "name": "SL Benfica",
+        "id": "sr:competitor:3006"
+      },
+      {
+        "name": "SSC Napoli",
+        "id": "sr:competitor:2714"
+      },
+      {
+        "name": "Shkendija Tetovo",
+        "id": "sr:competitor:5413"
+      },
+      {
+        "name": "Slavia Prague",
+        "id": "sr:competitor:2216"
+      },
+      {
+        "name": "Sporting CP",
+        "id": "sr:competitor:3001"
+      },
+      {
+        "name": "Tottenham Hotspur",
+        "id": "sr:competitor:33"
+      },
+      {
+        "name": "Union Saint-Gilloise",
+        "id": "sr:competitor:4860"
+      },
+      {
+        "name": "Villarreal CF",
+        "id": "sr:competitor:2819"
+      }
+    ]
+  },
+  "Stars League": {
+    "2025-2026": [
+      {
+        "name": "AL Wakrah SC",
+        "id": "sr:competitor:44440"
+      },
+      {
+        "name": "Al Ahli Doha SC",
+        "id": "sr:competitor:44443"
+      },
+      {
+        "name": "Al Arabi Doha SC",
+        "id": "sr:competitor:44444"
+      },
+      {
+        "name": "Al Duhail SC",
+        "id": "sr:competitor:44441"
+      },
+      {
+        "name": "Al Gharafa SC",
+        "id": "sr:competitor:34312"
+      },
+      {
+        "name": "Al Rayyan SC",
+        "id": "sr:competitor:40660"
+      },
+      {
+        "name": "Al Sadd SC",
+        "id": "sr:competitor:39733"
+      },
+      {
+        "name": "Al Shahaniya",
+        "id": "sr:competitor:170364"
+      },
+      {
+        "name": "Al-Sailiya SC",
+        "id": "sr:competitor:44439"
+      },
+      {
+        "name": "Al-Shamal",
+        "id": "sr:competitor:170366"
+      },
+      {
+        "name": "Qatar SC",
+        "id": "sr:competitor:25914"
+      },
+      {
+        "name": "Umm-Salal SC",
+        "id": "sr:competitor:32490"
+      }
+    ]
+  },
+  "Saudi Pro League": {
+    "2025-2026": [
+      {
+        "name": "Al Ahli Saudi FC",
+        "id": "sr:competitor:34469"
+      },
+      {
+        "name": "Al Hilal SFC",
+        "id": "sr:competitor:21895"
+      },
+      {
+        "name": "Al Nassr Club",
+        "id": "sr:competitor:23400"
+      },
+      {
+        "name": "Al Qadsiah",
+        "id": "sr:competitor:56027"
+      },
+      {
+        "name": "Al-Fateh SC",
+        "id": "sr:competitor:56023"
+      },
+      {
+        "name": "Al-Fayha FC",
+        "id": "sr:competitor:168094"
+      },
+      {
+        "name": "Al-Hazm",
+        "id": "sr:competitor:168086"
+      },
+      {
+        "name": "Al-Ittifaq FC",
+        "id": "sr:competitor:34318"
+      },
+      {
+        "name": "Al-Ittihad Club",
+        "id": "sr:competitor:34315"
+      },
+      {
+        "name": "Al-Khaleej Club",
+        "id": "sr:competitor:167228"
+      },
+      {
+        "name": "Al-Kholood",
+        "id": "sr:competitor:386360"
+      },
+      {
+        "name": "Al-Najma",
+        "id": "sr:competitor:759502"
+      },
+      {
+        "name": "Al-Okhdood Club",
+        "id": "sr:competitor:529779"
+      },
+      {
+        "name": "Al-Riyadh SC",
+        "id": "sr:competitor:168088"
+      },
+      {
+        "name": "Al-Shabab FC (SA)",
+        "id": "sr:competitor:34313"
+      },
+      {
+        "name": "Al-Taawoun FC",
+        "id": "sr:competitor:56021"
+      },
+      {
+        "name": "Damac FC",
+        "id": "sr:competitor:220298"
+      },
+      {
+        "name": "Neom SC",
+        "id": "sr:competitor:529781"
+      }
+    ]
+  },
+  "Arabian Gulf League": {
+    "2025-2026": [
+      {
+        "name": "AL Bataeh (UAE)",
+        "id": "sr:competitor:634516"
+      },
+      {
+        "name": "Ajman Club",
+        "id": "sr:competitor:58687"
+      },
+      {
+        "name": "Al Ain FC",
+        "id": "sr:competitor:37082"
+      },
+      {
+        "name": "Al Dhafra SSC",
+        "id": "sr:competitor:81305"
+      },
+      {
+        "name": "Al Jazira (UAE)",
+        "id": "sr:competitor:8090"
+      },
+      {
+        "name": "Al Wahda FC (UAE)",
+        "id": "sr:competitor:342882"
+      },
+      {
+        "name": "Al Wasl FC",
+        "id": "sr:competitor:47674"
+      },
+      {
+        "name": "Al-Nasr Dubai CSC",
+        "id": "sr:competitor:46332"
+      },
+      {
+        "name": "Baniyas Club",
+        "id": "sr:competitor:58689"
+      },
+      {
+        "name": "Dibba Al Fujairah",
+        "id": "sr:competitor:81309"
+      },
+      {
+        "name": "Ittihad Kalba FC",
+        "id": "sr:competitor:55705"
+      },
+      {
+        "name": "Khor Fakkan Club",
+        "id": "sr:competitor:290572"
+      },
+      {
+        "name": "Shabab Al Ahli Dubai",
+        "id": "sr:competitor:370464"
+      },
+      {
+        "name": "Sharjah FC",
+        "id": "sr:competitor:34060"
+      }
+    ]
+  }
+}
