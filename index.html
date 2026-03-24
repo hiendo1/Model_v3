@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Predictor Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #030712;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.3);
+            --secondary: #a855f7;
+            --text: #f3f4f6;
+            --text-dim: #9ca3af;
+            --accent: #10b981;
+            --danger: #ef4444;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            background: radial-gradient(circle at top right, #1e1b4b, #030712); 
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .premium-container {
+            width: 100%;
+            max-width: 800px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        header { text-align: center; margin-bottom: 3rem; }
+        header h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em; background: linear-gradient(to right, #60a5fa, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header p { color: var(--text-dim); margin-top: 0.5rem; font-size: 1.1rem; }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2rem;
+        }
+
+        .input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .field { display: flex; flex-direction: column; gap: 0.5rem; }
+        label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--text-dim); letter-spacing: 0.05em; }
+        
+        select, input {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 0.875rem 1rem;
+            color: var(--text);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        select:focus, input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px var(--primary-glow); }
+
+        .btn-predict {
+            width: 100%;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 1rem;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
+        }
+        .btn-predict:hover { transform: translateY(-2px); box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.5); }
+        .btn-predict:active { transform: translateY(0); }
+        .btn-predict:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+        /* Results Area */
+        #result-area { display: none; margin-top: 2rem; }
+        .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+        
+        .stat-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            text-align: center;
+        }
+        .stat-box h4 { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 0.5rem; }
+        .stat-box .val { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+
+        .progress-stack { height: 12px; background: rgba(0,0,0,0.3); border-radius: 6px; overflow: hidden; display: flex; margin: 1rem 0; }
+        .p-h { background: var(--primary); transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); }
+        .p-d { background: #6b7280; transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); }
+        .p-a { background: var(--danger); transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        .labels { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-dim); }
+
+        .score-pill { 
+            background: rgba(255, 255, 255, 0.05); 
+            padding: 0.5rem 1rem; 
+            border-radius: 2rem; 
+            font-weight: 600; 
+            font-size: 0.9rem;
+            display: inline-flex;
+            justify-content: space-between;
+            width: 100px;
+        }
+
+        .over-under-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .ou-label { width: 40px; font-weight: 600; font-size: 0.9rem; }
+        .ou-progress-bg { flex: 1; height: 8px; background: rgba(0,0,0,0.3); border-radius: 4px; overflow: hidden; }
+        .ou-progress-fill { height: 100%; background: linear-gradient(to right, var(--primary), var(--accent)); transition: width 1s; }
+        .ou-val { width: 45px; text-align: right; font-size: 0.8rem; color: var(--text-dim); }
+
+        /* Loader */
+        .spinner { display: none; margin: 2rem auto; width: 40px; height: 40px; border: 4px solid rgba(255,255,255,0.1); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .insight-pill {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 0.6rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .insight-pill b { color: var(--primary); }
+
+        @media (max-width: 600px) {
+            .input-group { grid-template-columns: 1fr; }
+            header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="premium-container">
+    <header>
+        <h1>PHÂN TÍCH ĐẲNG CẤP</h1>
+        <p>Engine Dự đoán Bóng đá Toàn cầu v4</p>
+    </header>
+
+    <div class="glass-card">
+        <div class="input-group">
+            <div class="field">
+                <label>Đường dẫn API</label>
+                <input type="text" id="api-url" value="http://127.0.0.1:5050" placeholder="http://0.0.0.0:5050">
+            </div>
+                <div class="form-group">
+                    <label for="match-date">Ngày Trận Đấu (Bắt buộc)</label>
+                    <input type="date" id="match-date" required>
+                </div>
+        </div>
+
+        <div class="field" style="margin-bottom: 1.5rem;">
+            <label>Giải đấu</label>
+            <select id="league-select" onchange="resetTeams()"></select>
+        </div>
+        
+        <div class="input-group">
+            <div class="field">
+                <label>Đội Nhà</label>
+                <select id="home-select"></select>
+            </div>
+            <div class="field">
+                <label>Đội Khách</label>
+                <select id="away-select"></select>
+            </div>
+        </div>
+
+        <button class="btn-predict" id="predict-btn" onclick="predict()">PHÂN TÍCH TRẬN ĐẤU</button>
+        <div class="spinner" id="loader"></div>
+    </div>
+
+    <div id="result-area">
+        <div class="glass-card">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                <h3 style="font-weight: 800; font-size: 1.25rem;">KẾT QUẢ TRẬN ĐẤU</h3>
+                <span id="res-verdict" style="color: var(--accent); font-weight: 700; letter-spacing: 0.05em; font-size: 0.9rem; text-transform: uppercase;">NHẬN ĐỊNH</span>
+            </div>
+            
+            <div class="progress-stack">
+                <div id="bar-h" class="p-h"></div>
+                <div id="bar-d" class="p-d"></div>
+                <div id="bar-a" class="p-a"></div>
+            </div>
+            
+            <div class="labels">
+                <span id="lbl-h">CHỦ: --</span>
+                <span id="lbl-d">HÒA: --</span>
+                <span id="lbl-a">KHÁCH: --</span>
+            </div>
+        </div>
+
+        <div class="market-grid">
+            <div class="glass-card" style="padding: 1.5rem;">
+                <label>Xác suất Bàn thắng (Tài)</label>
+                <div id="ou-container" style="margin-top: 1rem;">
+                    <!-- O/U entries -->
+                </div>
+            </div>
+            <div class="glass-card" style="padding: 1.5rem;">
+                <label>BTTS & Tổng số bàn thắng</label>
+                <div class="stat-box" style="margin-top: 1rem; background: none; border: none; padding: 0;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom: 1rem;">
+                        <span style="font-size: 0.9rem; color: var(--text-dim);">Cả hai đội ghi bàn (Có)</span>
+                        <span id="val-btts" style="font-weight: 700; color: var(--accent);">--%</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between;">
+                        <span style="font-size: 0.9rem; color: var(--text-dim);">Tổng bàn thắng kỳ vọng</span>
+                        <span id="val-total" style="font-weight: 700; color: var(--primary);">--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <label>Tỷ số chính xác (Top 5)</label>
+            <div id="score-container" style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;"></div>
+        </div>
+
+        <div class="glass-card">
+            <label>Thông tin chi tiết</label>
+            <div id="insight-group" style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let db = {};
+
+    function getApiBase() {
+        return document.getElementById('api-url').value.trim() || 'http://127.0.0.1:5050';
+    }
+
+    async function init() {
+        const apiBase = getApiBase();
+        const select = document.getElementById('league-select');
+        select.innerHTML = '<option value="">-- LOADING TOURNAMENTS... --</option>';
+        
+        try {
+            const res = await fetch(`${apiBase}/league-teams`);
+            if (!res.ok) throw new Error("API not reachable");
+            db = await res.json();
+            
+            select.innerHTML = '<option value="">-- SELECT TOURNAMENT --</option>';
+            Object.keys(db).sort().forEach(l => {
+                const opt = document.createElement('option');
+                opt.value = l; opt.innerText = l;
+                select.appendChild(opt);
+            });
+            console.log(`[INIT] Loaded ${Object.keys(db).length} leagues from ${apiBase}`);
+        } catch(e) { 
+            console.error(e);
+            select.innerHTML = '<option value="">-- API CONNECTION FAILED --</option>';
+            alert(`Failed to connect to API at ${apiBase}. Ensure the server is running.`);
+        }
+    }
+
+    // Set default date to today
+    document.getElementById('match-date').valueAsDate = new Date();
+
+    function resetTeams() {
+        const l = document.getElementById('league-select').value;
+        const hS = document.getElementById('home-select');
+        const aS = document.getElementById('away-select');
+        hS.innerHTML = ''; aS.innerHTML = '';
+        
+        if (!l) return;
+        
+        const seasons = Object.keys(db[l]).sort().reverse();
+        const teams = db[l][seasons[0]];
+        
+        teams.sort((a,b) => a.name.localeCompare(b.name)).forEach(t => {
+            const opt = document.createElement('option');
+            opt.value = t.name; opt.innerText = t.name;
+            hS.appendChild(opt.cloneNode(true));
+            aS.appendChild(opt);
+        });
+    }
+
+    async function predict() {
+        const apiBase = getApiBase();
+        const l = document.getElementById('league-select').value;
+        const h = document.getElementById('home-select').value;
+        const a = document.getElementById('away-select').value;
+        const d = document.getElementById('match-date').value;
+        
+        if (!h || !a || !l || !d) {
+            alert("Vui lòng chọn giải đấu, cả hai đội và ngày trận đấu.");
+            return;
+        }
+
+        const btn = document.getElementById('predict-btn');
+        const loader = document.getElementById('loader');
+        const resArea = document.getElementById('result-area');
+        
+        btn.disabled = true;
+        loader.style.display = 'block';
+        resArea.style.opacity = '0.3';
+
+        try {
+            const res = await fetch(`${apiBase}/predict-by-name`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({home_name: h, away_name: a, league: l, date: d})
+            });
+            const data = await res.json();
+            if (data.success) {
+                render(data);
+                resArea.style.display = 'block';
+                resArea.style.opacity = '1';
+                resArea.scrollIntoView({ behavior: 'smooth' });
+            } else { 
+                alert(data.error || "Dự đoán thất bại"); 
+            }
+        } catch(e) { 
+            alert("Lỗi kết nối API tại " + apiBase); 
+        }
+        finally {
+            btn.disabled = false;
+            loader.style.display = 'none';
+        }
+    }
+
+    function render(data) {
+        const p = data.predictions;
+        const m = data.match;
+        
+        // Winner Area
+        document.getElementById('res-verdict').innerText = p['1x2'].suggest;
+        document.getElementById('bar-h').style.width = (p['1x2'].home * 100) + '%';
+        document.getElementById('bar-d').style.width = (p['1x2'].draw * 100) + '%';
+        document.getElementById('bar-a').style.width = (p['1x2'].away * 100) + '%';
+        document.getElementById('lbl-h').innerText = `HOME: ${(p['1x2'].home * 100).toFixed(0)}%`;
+        document.getElementById('lbl-d').innerText = `DRAW: ${(p['1x2'].draw * 100).toFixed(0)}%`;
+        document.getElementById('lbl-a').innerText = `AWAY: ${(p['1x2'].away * 100).toFixed(0)}%`;
+        
+        // O/U
+        const ouCont = document.getElementById('ou-container');
+        ouCont.innerHTML = '';
+        Object.entries(p.over_under).sort().forEach(([line, prob]) => {
+            ouCont.innerHTML += `
+                <div class="over-under-bar">
+                    <span class="ou-label">${line}</span>
+                    <div class="ou-progress-bg"><div class="ou-progress-fill" style="width: ${prob*100}%"></div></div>
+                    <span class="ou-val">${(prob*100).toFixed(0)}%</span>
+                </div>
+            `;
+        });
+        
+        // BTTS & Total
+        document.getElementById('val-btts').innerText = (p.btts * 100).toFixed(0) + '%';
+        document.getElementById('val-total').innerText = (p.expected_goals.home + p.expected_goals.away).toFixed(1);
+        
+        // Scores
+        const sCont = document.getElementById('score-container');
+        sCont.innerHTML = '';
+        p.top_scores.forEach(s => {
+            sCont.innerHTML += `
+                <div class="score-pill">
+                    <span>${s.score}</span>
+                    <span style="color:var(--text-dim)">${(s.p*100).toFixed(0)}%</span>
+                </div>
+            `;
+        });
+
+        // Insights
+        const insightGroup = document.getElementById('insight-group');
+        insightGroup.innerHTML = `
+            <div class="insight-pill"><b>Sức mạnh (Elo):</b> ${m.home} (${m.h_elo.toFixed(0)}) vs ${m.away} (${m.a_elo.toFixed(0)})</div>
+            <div class="insight-pill"><b>Ngày nghỉ:</b> ${m.home} (${m.h_rest} ngày) vs ${m.away} (${m.a_rest} ngày)</div>
+            <div class="insight-pill"><b>Phong độ (xG):</b> ${p.expected_goals.home.toFixed(2)} - ${p.expected_goals.away.toFixed(2)}</div>
+        `;
+    }
+
+    init();
+</script>
+</body>
+</html>
