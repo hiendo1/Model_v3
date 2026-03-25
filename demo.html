@@ -158,47 +158,47 @@
 
 <div class="premium-container">
     <header>
-        <h1>PHÂN TÍCH ĐẲNG CẤP</h1>
-        <p>Engine Dự đoán Bóng đá Toàn cầu v4</p>
+        <h1>ELITE ANALYSIS</h1>
+        <p>Global Football Prediction Engine v4</p>
     </header>
 
     <div class="glass-card">
         <div class="input-group">
             <div class="field">
-                <label>Đường dẫn API</label>
+                <label>API URL</label>
                 <input type="text" id="api-url" value="http://127.0.0.1:5050" placeholder="http://0.0.0.0:5050">
             </div>
                 <div class="form-group">
-                    <label for="match-date">Ngày Trận Đấu (Bắt buộc)</label>
+                    <label for="match-date">Match Date (Required)</label>
                     <input type="date" id="match-date" required>
                 </div>
         </div>
 
         <div class="field" style="margin-bottom: 1.5rem;">
-            <label>Giải đấu</label>
+            <label>League</label>
             <select id="league-select" onchange="resetTeams()"></select>
         </div>
         
         <div class="input-group">
             <div class="field">
-                <label>Đội Nhà</label>
+                <label>Home Team</label>
                 <select id="home-select"></select>
             </div>
             <div class="field">
-                <label>Đội Khách</label>
+                <label>Away Team</label>
                 <select id="away-select"></select>
             </div>
         </div>
 
-        <button class="btn-predict" id="predict-btn" onclick="predict()">PHÂN TÍCH TRẬN ĐẤU</button>
+        <button class="btn-predict" id="predict-btn" onclick="predict()">ANALYZE MATCH</button>
         <div class="spinner" id="loader"></div>
     </div>
 
     <div id="result-area">
         <div class="glass-card">
             <div style="display:flex; justify-content:space-between; align-items:flex-end;">
-                <h3 style="font-weight: 800; font-size: 1.25rem;">KẾT QUẢ TRẬN ĐẤU</h3>
-                <span id="res-verdict" style="color: var(--accent); font-weight: 700; letter-spacing: 0.05em; font-size: 0.9rem; text-transform: uppercase;">NHẬN ĐỊNH</span>
+                <h3 style="font-weight: 800; font-size: 1.25rem;">MATCH PREDICTION</h3>
+                <span id="res-verdict" style="color: var(--accent); font-weight: 700; letter-spacing: 0.05em; font-size: 0.9rem; text-transform: uppercase;">VERDICT</span>
             </div>
             
             <div class="progress-stack">
@@ -208,28 +208,28 @@
             </div>
             
             <div class="labels">
-                <span id="lbl-h">CHỦ: --</span>
-                <span id="lbl-d">HÒA: --</span>
-                <span id="lbl-a">KHÁCH: --</span>
+                <span id="lbl-h">HOME: --</span>
+                <span id="lbl-d">DRAW: --</span>
+                <span id="lbl-a">AWAY: --</span>
             </div>
         </div>
 
         <div class="market-grid">
             <div class="glass-card" style="padding: 1.5rem;">
-                <label>Xác suất Bàn thắng (Tài)</label>
+                <label>Goal Probabilities (Over)</label>
                 <div id="ou-container" style="margin-top: 1rem;">
                     <!-- O/U entries -->
                 </div>
             </div>
             <div class="glass-card" style="padding: 1.5rem;">
-                <label>BTTS & Tổng số bàn thắng</label>
+                <label>BTTS & Total Goals</label>
                 <div class="stat-box" style="margin-top: 1rem; background: none; border: none; padding: 0;">
                     <div style="display:flex; justify-content:space-between; margin-bottom: 1rem;">
-                        <span style="font-size: 0.9rem; color: var(--text-dim);">Cả hai đội ghi bàn (Có)</span>
+                        <span style="font-size: 0.9rem; color: var(--text-dim);">Both Teams to Score (Yes)</span>
                         <span id="val-btts" style="font-weight: 700; color: var(--accent);">--%</span>
                     </div>
                     <div style="display:flex; justify-content:space-between;">
-                        <span style="font-size: 0.9rem; color: var(--text-dim);">Tổng bàn thắng kỳ vọng</span>
+                        <span style="font-size: 0.9rem; color: var(--text-dim);">Expected Total Goals</span>
                         <span id="val-total" style="font-weight: 700; color: var(--primary);">--</span>
                     </div>
                 </div>
@@ -237,12 +237,12 @@
         </div>
 
         <div class="glass-card">
-            <label>Tỷ số chính xác (Top 5)</label>
+            <label>Correct Score (Top 5)</label>
             <div id="score-container" style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;"></div>
         </div>
 
         <div class="glass-card">
-            <label>Thông tin chi tiết</label>
+            <label>Detailed Insights</label>
             <div id="insight-group" style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;"></div>
         </div>
     </div>
@@ -258,14 +258,14 @@
     async function init() {
         const apiBase = getApiBase();
         const select = document.getElementById('league-select');
-        select.innerHTML = '<option value="">-- LOADING TOURNAMENTS... --</option>';
+        select.innerHTML = '<option value="">-- LOADING LEAGUES... --</option>';
         
         try {
             const res = await fetch(`${apiBase}/league-teams`);
             if (!res.ok) throw new Error("API not reachable");
             db = await res.json();
             
-            select.innerHTML = '<option value="">-- SELECT TOURNAMENT --</option>';
+            select.innerHTML = '<option value="">-- SELECT LEAGUE --</option>';
             Object.keys(db).sort().forEach(l => {
                 const opt = document.createElement('option');
                 opt.value = l; opt.innerText = l;
@@ -309,7 +309,7 @@
         const d = document.getElementById('match-date').value;
         
         if (!h || !a || !l || !d) {
-            alert("Vui lòng chọn giải đấu, cả hai đội và ngày trận đấu.");
+            alert("Please select a league, both teams, and the match date.");
             return;
         }
 
@@ -334,10 +334,10 @@
                 resArea.style.opacity = '1';
                 resArea.scrollIntoView({ behavior: 'smooth' });
             } else { 
-                alert(data.error || "Dự đoán thất bại"); 
+                alert(data.error || "Prediction failed"); 
             }
         } catch(e) { 
-            alert("Lỗi kết nối API tại " + apiBase); 
+            alert("API connection error at " + apiBase); 
         }
         finally {
             btn.disabled = false;
@@ -366,10 +366,10 @@
             ouCont.innerHTML += `
                 <div style="margin-bottom: 1.25rem;">
                     <div style="display:flex; justify-content:space-between; margin-bottom: 0.4rem; font-size: 0.8rem; font-weight: 600;">
-                        <span>KÈO ${line}</span>
+                        <span>LINE ${line}</span>
                         <span>
-                            <span class="ou-val t">TÀI: ${(prob*100).toFixed(0)}%</span> | 
-                            <span class="ou-val x">XỈU: ${(prob_under*100).toFixed(0)}%</span>
+                            <span class="ou-val t">OVER: ${(prob*100).toFixed(0)}%</span> | 
+                            <span class="ou-val x">UNDER: ${(prob_under*100).toFixed(0)}%</span>
                         </span>
                     </div>
                     <div class="ou-progress-bg">
@@ -399,9 +399,9 @@
         // Insights
         const insightGroup = document.getElementById('insight-group');
         insightGroup.innerHTML = `
-            <div class="insight-pill"><b>Sức mạnh (Elo):</b> ${m.home} (${m.h_elo.toFixed(0)}) vs ${m.away} (${m.a_elo.toFixed(0)})</div>
-            <div class="insight-pill"><b>Ngày nghỉ:</b> ${m.home} (${m.h_rest} ngày) vs ${m.away} (${m.a_rest} ngày)</div>
-            <div class="insight-pill"><b>Phong độ (xG):</b> ${p.expected_goals.home.toFixed(2)} - ${p.expected_goals.away.toFixed(2)}</div>
+            <div class="insight-pill"><b>Power (Elo):</b> ${m.home} (${m.h_elo.toFixed(0)}) vs ${m.away} (${m.a_elo.toFixed(0)})</div>
+            <div class="insight-pill"><b>Rest Days:</b> ${m.home} (${m.h_rest} days) vs ${m.away} (${m.a_rest} days)</div>
+            <div class="insight-pill"><b>Form (xG):</b> ${p.expected_goals.home.toFixed(2)} - ${p.expected_goals.away.toFixed(2)}</div>
         `;
     }
 
