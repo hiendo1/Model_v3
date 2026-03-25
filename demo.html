@@ -163,15 +163,18 @@
     </header>
 
     <div class="glass-card">
-        <div class="input-group">
+        <div class="input-group" style="grid-template-columns: 2fr 1fr;">
             <div class="field">
                 <label>API URL</label>
-                <input type="text" id="api-url" value="http://127.0.0.1:5050" placeholder="http://0.0.0.0:5050">
-            </div>
-                <div class="form-group">
-                    <label for="match-date">Match Date (Required)</label>
-                    <input type="date" id="match-date" required>
+                <div style="display:flex; gap: 0.5rem;">
+                    <input type="text" id="api-url" value="http://127.0.0.1:5050" placeholder="http://0.0.0.0:5050" style="flex:1">
+                    <button onclick="init()" class="btn-predict" style="padding: 0 1rem; width: auto; font-size: 0.85rem; box-shadow: none;">CONNECT</button>
                 </div>
+            </div>
+            <div class="form-group">
+                <label for="match-date">Match Date (Required)</label>
+                <input type="date" id="match-date" required style="width: 100%;">
+            </div>
         </div>
 
         <div class="field" style="margin-bottom: 1.5rem;">
@@ -258,7 +261,13 @@
     async function init() {
         const apiBase = getApiBase();
         const select = document.getElementById('league-select');
+        const hS = document.getElementById('home-select');
+        const aS = document.getElementById('away-select');
+        const predictBtn = document.getElementById('predict-btn');
+        
         select.innerHTML = '<option value="">-- LOADING LEAGUES... --</option>';
+        hS.innerHTML = ''; aS.innerHTML = '';
+        predictBtn.disabled = true;
         
         try {
             const res = await fetch(`${apiBase}/league-teams`);
@@ -272,6 +281,7 @@
                 select.appendChild(opt);
             });
             console.log(`[INIT] Loaded ${Object.keys(db).length} leagues from ${apiBase}`);
+            predictBtn.disabled = false;
         } catch(e) { 
             console.error(e);
             select.innerHTML = '<option value="">-- API CONNECTION FAILED --</option>';
