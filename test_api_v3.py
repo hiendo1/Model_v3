@@ -1,7 +1,7 @@
 import requests
 import json
 
-url = "http://127.0.0.1:5050/predict-by-name"
+url = "api key"
 data = {
     "home_name": "Arsenal FC",
     "away_name": "Liverpool FC"
